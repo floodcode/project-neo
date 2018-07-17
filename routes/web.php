@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+/**
+ * Home routes
+ */
+Route::get('/', 'HomeController@index')->name('home.index');
+
+/**
+ * News routes
+ */
+Route::get('/news', 'NewsController@index')->name('news.index');
