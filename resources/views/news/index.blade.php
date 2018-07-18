@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Home page')
+@section('title', 'News')
 
 @section('content')
     <div class="text-center">

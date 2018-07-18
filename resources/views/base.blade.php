@@ -8,7 +8,7 @@
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
 
-        <title>{{ config('app.name') }} - @yield('title')</title>
+        <title>{{ config('app.name') }} - @yield('title', 'News Source')</title>
     </head>
 
     <body>
