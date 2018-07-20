@@ -1,22 +1,35 @@
-image: registry.gitlab.com/floodcode/project-neo/php:latest
+image: registry.gitlab.com/floodcode/project-neo/ci:latest
 
 stages:
-  - test
+  - build
   - deploy
 
-test:
-  stage: test
-  script:
-    - echo "Test stage"
-
-deploy_production:
-  stage: deploy
+build:
+  stage: build
   artifacts:
+    name: "$CI_COMMIT_SHA"
     paths:
       - ./
   only:
     - master
   script:
-    - 'php composer.phar install --optimize-autoloader --no-dev'
+    - 'rm -rf .git'
+    - 'php composer.phar install --optimize-autoloader --no-dev --no-progress'
     - 'php artisan config:cache'
     - 'php artisan route:cache'
+
+deploy_production:
+  when: manual
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - 'mkdir -p ~/.ssh'
+    - 'eval $(ssh-agent -s)'
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+    - 'shopt -s expand_aliases'
+    - 'alias sshtask="ssh -p 22 $SSH_USER@$SSH_HOST"'
+    - 'scp -r . $SSH_USER@$SSH_HOST:~/releases/$CI_COMMIT_SHA'
+    - 'sshtask "cd /home/$SSH_USER/releases && ln -nfs $CI_COMMIT_SHA current"'
+    - 'sshtask "cd /home/$SSH_USER/releases/current && cp .env.example .env"'
