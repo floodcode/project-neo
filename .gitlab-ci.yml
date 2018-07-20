@@ -1,0 +1,22 @@
+image: registry.gitlab.com/floodcode/project-neo/php:latest
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - echo "Test stage"
+
+deploy_production:
+  stage: deploy
+  artifacts:
+    paths:
+      - ./
+  only:
+    - master
+  script:
+    - 'php composer.phar install --optimize-autoloader --no-dev'
+    - 'php artisan config:cache'
+    - 'php artisan route:cache'
