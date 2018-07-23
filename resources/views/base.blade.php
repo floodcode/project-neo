@@ -53,9 +53,8 @@
             </div>
         </main>
 
-        <hr>
-
         <footer class="container">
+            <hr>
             <p>&copy; {{ config('app.name') }}</p>
         </footer>
 

@@ -36,3 +36,5 @@ Route::get('/', 'HomeController@index')->name('home');
  * News routes
  */
 Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/view/{id}', 'NewsController@view')->name('news.view');
+Route::match(['get', 'post'], '/news/create', 'NewsController@create')->name('news.create');
