@@ -19,6 +19,7 @@ return [
 
     // News
     'add-post' => 'Add New Post',
-    'edit-post' => 'Edit post'
+    'edit-post' => 'Edit post',
+    'delete-post' => 'Delete post'
 
 ];
