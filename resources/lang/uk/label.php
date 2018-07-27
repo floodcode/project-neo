@@ -3,14 +3,14 @@
 return [
 
     // Auth
-    'name' => 'Name',
-    'email-address' => 'E-Mail Address',
-    'password' => 'Password',
-    'confirm-password' => 'Confirm Password',
-    'remember-me' => 'Remember Me',
+    'name' => 'Ім\'я',
+    'email-address' => 'E-mail адреса',
+    'password' => 'Пароль',
+    'confirm-password' => 'Підтвердження пароля',
+    'remember-me' => 'Запам\'ятати мене',
 
     // News
-    'title' => 'Title',
-    'description' => 'Description'
+    'title' => 'Заголовок',
+    'description' => 'Опис'
 
 ];
