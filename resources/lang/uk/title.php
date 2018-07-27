@@ -10,6 +10,6 @@ return [
     // News
     'news' => 'Новини',
     'add-post' => 'Додати новину',
-    'edit-post' => 'Edit Post'
+    'edit-post' => 'Редагувати новину'
 
 ];
