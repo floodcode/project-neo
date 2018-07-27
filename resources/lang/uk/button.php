@@ -19,6 +19,7 @@ return [
 
     // News
     'add-post' => 'Додати новину',
-    'edit-post' => 'Редагувати новину'
+    'edit-post' => 'Редагувати новину',
+    'delete-post' => 'Delete post'
 
 ];
