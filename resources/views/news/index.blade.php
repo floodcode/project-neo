@@ -14,12 +14,26 @@
         @foreach ($news as $item)
             <div class="card mb-3">
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->title }}</a>
-                    </h4>
+                    <div class="row">
+                        <div class="col">
+                            <h3>
+                                <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->title }}</a>
+                            </h3>
+                        </div>
+                        <div class="col text-right">
+                            @if ($item->canEdit(auth()->user()))
+                                <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
+                                    {{ __('button.edit-post') }}
+                                </a>
+                                <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
+                                    {{ __('button.delete-post') }}
+                                </button>
+                            @endif
+                        </div>
+                    </div>
 
                     <p class="card-text">
-                        {{ $item->description }}
+                        {{ $item->message }}
                     </p>
 
                     <p class="card-text text-muted" title="{{ $item->created_at }}">
@@ -29,11 +43,17 @@
             </div>
         @endforeach
 
+        @role('poster')
+        <div class="text-center mb-3">
+            <a class="btn btn-primary" href="{{ route('news.create') }}">{{ __('button.add-post') }}</a>
+        </div>
+        @endrole
+
         {{ $news->links() }}
     @else
         @role('poster')
             <div class="text-center">
-                <a class="btn btn-primary" href="{{ route('news.create') }}">{{ __('Add New Post') }}</a>
+                <a class="btn btn-primary" href="{{ route('news.create') }}">{{ __('button.add-post') }}</a>
             </div>
         @else
             <p class="text-center">{{ __('message.nothing-to-show') }}</p>
