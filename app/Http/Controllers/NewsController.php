@@ -65,7 +65,7 @@ class NewsController extends Controller
         }
 
         return view('news.edit', [
-            'item' => News::findOrFail($id)
+            'item' => $item
         ]);
     }
 
