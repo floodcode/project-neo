@@ -8,7 +8,7 @@
         <link rel="stylesheet"
               href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
 
-        <title>{{ config('app.name') }} - @yield('title', 'News Source')</title>
+        <title>{{ config('app.name') }} - @yield('title', 'News')</title>
     </head>
 
     <body>
@@ -22,24 +22,24 @@
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('button.home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('news') }}">News</a>
+                            <a class="nav-link" href="{{ route('news') }}">{{ __('button.news') }}</a>
                         </li>
                     </ul>
 
                     <ul class="navbar-nav navbar-right">
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('button.login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('button.register') }}</a>
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                                <a class="nav-link" href="{{ route('logout') }}">{{ __('button.logout') }}</a>
                             </li>
                         @endguest
                     </ul>

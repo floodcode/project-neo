@@ -38,3 +38,4 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/view/{id}', 'NewsController@view')->name('news.view');
 Route::match(['get', 'post'], '/news/create', 'NewsController@create')->name('news.create');
+Route::match(['get', 'post'], '/news/edit/{id}', 'NewsController@edit')->name('news.edit');
