@@ -17,7 +17,7 @@ return [
 
     // Errors
     'error' => [
-        'not-authorized' => 'You are not authorized to perform this action'
+        'not-authorized' => 'У вас нет прав на выполнения данного действия'
     ]
 
 ];
