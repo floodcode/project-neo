@@ -5,6 +5,9 @@ return [
     // Generic messages
     'nothing-to-show' => 'Nothing to show',
 
+    // News
+    'delete-this-item?' => 'Are you sure you want to delete this item?',
+
     'validation' => [
         // News
         'news-title-required' => 'Post title field is required',
