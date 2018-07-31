@@ -3,22 +3,26 @@
 return [
 
     // Generic
-    'home' => 'Home',
-    'news' => 'News',
-    'create' => 'Create',
-    'edit' => 'Edit',
-    'cancel' => 'Cancel',
+    'home' => 'Главная',
+    'news' => 'Новости',
+    'create' => 'Создать',
+    'edit' => 'Редактировать',
+    'delete' => 'Удалить',
+    'cancel' => 'Отменить',
+    'close' => 'Закрыть',
 
     // Auth
-    'login' => 'Login',
-    'logout' => 'Logout',
-    'register' => 'Register',
-    'forgot-password?' => 'Forgot Your Password?',
-    'reset-password' => 'Reset Password',
-    'send-password-reset-link' => 'Send Password Reset Link',
+    'login' => 'Войти',
+    'logout' => 'Выйти',
+    'register' => 'Регистрация',
+    'forgot-password?' => 'Забыли пароль?',
+    'reset-password' => 'Восстановить пароль',
+    'send-password-reset-link' => 'Отправить ссылку постановления пароля',
 
     // News
-    'add-post' => 'Add New Post',
-    'edit-post' => 'Edit post'
+    'add-post' => 'Добавить новость',
+    'edit-post' => 'Редактировать пост',
+    'delete-post' => 'Удалить пост',
+    'read-more' => 'Read More'
 
 ];
