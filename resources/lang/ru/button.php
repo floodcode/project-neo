@@ -7,7 +7,9 @@ return [
     'news' => 'News',
     'create' => 'Create',
     'edit' => 'Edit',
+    'delete' => 'Delete',
     'cancel' => 'Cancel',
+    'close' => 'Close',
 
     // Auth
     'login' => 'Login',
@@ -19,7 +21,7 @@ return [
 
     // News
     'add-post' => 'Add New Post',
-    'edit-post' => 'Edit post',
-    'delete-post' => 'Delete post'
+    'edit-post' => 'Edit Post',
+    'delete-post' => 'Delete Post'
 
 ];
