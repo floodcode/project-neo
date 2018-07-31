@@ -11,6 +11,6 @@ return [
 
     // News
     'title' => 'Заголовок',
-    'message' => 'Message'
+    'message' => 'Повідомлення'
 
 ];
