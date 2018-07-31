@@ -3,14 +3,14 @@
 return [
 
     // Auth
-    'register' => 'Register',
-    'login' => 'Login',
-    'reset-password' => 'Reset Password',
+    'register' => 'Регистрация',
+    'login' => 'Войти',
+    'reset-password' => 'Восстановить пароль',
 
     // News
-    'news' => 'News',
-    'add-post' => 'Add New Post',
-    'edit-post' => 'Edit Post',
-    'delete-post' => 'Delete Post'
+    'news' => 'Новости',
+    'add-post' => 'Добавить новость',
+    'edit-post' => 'Редактировать пост',
+    'delete-post' => 'Удалить пост'
 
 ];
