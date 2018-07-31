@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,7 @@ class NewsController extends Controller
     public function __construct()
     {
         $this->middleware('role:poster', ['only' => [
-            'create', 'edit'
+            'create', 'edit', 'delete'
         ]]);
     }
 
@@ -67,6 +68,17 @@ class NewsController extends Controller
         return view('news.edit', [
             'item' => $item
         ]);
+    }
+
+    public function delete($id): JsonResponse
+    {
+        $item = News::findOrFail($id);
+        if (!$item->canEdit(Auth::user())) {
+            return $this->jsonError(__('message.error.not-authorized'));
+        }
+
+        $item->delete();
+        return $this->jsonSuccess();
     }
 
     protected function getValidationRules(): array

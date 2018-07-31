@@ -31,4 +31,10 @@
         {{ $item->created_at->diffForHumans() }}
     </p>
 
+
+    @include('news.components.delete-popup')
+@endsection
+
+@section('scripts')
+    {!! includeAsset('/js/module/news.js') !!}
 @endsection
