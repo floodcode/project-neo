@@ -3,16 +3,16 @@
 return [
 
     // Generic messages
-    'nothing-to-show' => 'Nothing to show',
+    'nothing-to-show' => 'Пусто',
 
     // News
-    'delete-this-item?' => 'Are you sure you want to delete this item?',
+    'delete-this-item?' => 'Вы действительно желаете удалить этот элемент?',
 
     'validation' => [
         // News
-        'news-title-required' => 'Post title field is required',
-        'news-title-max' => 'Post title length should not exceed 255',
-        'news-message-required' => 'Post message field is required'
+        'news-title-required' => 'Поле название обязательное',
+        'news-title-max' => 'Длина названия не должна превышать 255 символов',
+        'news-message-required' => 'Поле сообщение обязательное'
     ],
 
     // Errors
