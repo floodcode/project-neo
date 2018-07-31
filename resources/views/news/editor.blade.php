@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
         <label for="news-create-message">{{ __('label.message') }}</label>
-        <textarea class="form-control" id="news-create-message" rows="5" name="message">{{ $item->message ?? '' }}</textarea>
+        <textarea class="form-control" id="news-create-message" name="message">{{ $item->message ?? '' }}</textarea>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -22,3 +22,11 @@
         <button type="submit" class="btn btn-primary">{{ $submitButtonText }}</button>
     </div>
 </form>
+
+@section('scripts')
+    {!! includeAsset('/ckeditor/ckeditor.js') !!}
+
+    <script>
+        CKEDITOR.replace('news-create-message');
+    </script>
+@endsection

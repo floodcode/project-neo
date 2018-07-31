@@ -28,7 +28,7 @@
         </div>
         @endif
     </div>
-    <p>{{ $item->message }}</p>
+    <div>{!! $item->message !!}</div>
     <p class="text-muted" title="{{ $item->created_at }}">
         {{ $item->created_at->diffForHumans() }}
     </p>

@@ -34,9 +34,9 @@
                         @endif
                     </div>
 
-                    <p class="card-text">
-                        {{ $item->message }}
-                    </p>
+                    <div class="card-text">
+                        {!! $item->message !!}
+                    </div>
 
                     <p class="card-text text-muted" title="{{ $item->created_at }}">
                         {{ $item->created_at->diffForHumans() }}
