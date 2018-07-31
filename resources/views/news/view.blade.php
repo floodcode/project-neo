@@ -16,7 +16,7 @@
             <h3>{{ $item->title }}</h3>
         </div>
         @if ($item->canEdit(auth()->user()))
-        <div class="col-md text-center text-md-right">
+        <div class="col-md-4 text-center text-md-right">
             <div class="mb-2">
                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
                     {{ __('button.edit-post') }}

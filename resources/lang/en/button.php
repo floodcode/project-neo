@@ -22,6 +22,7 @@ return [
     // News
     'add-post' => 'Add New Post',
     'edit-post' => 'Edit Post',
-    'delete-post' => 'Delete Post'
+    'delete-post' => 'Delete Post',
+    'read-more' => 'Read More'
 
 ];
