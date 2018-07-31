@@ -11,6 +11,14 @@
 
         @yield('styles')
 
+        @if (app()->getLocale() === 'ach')
+            <script type="text/javascript">
+                var _jipt = [];
+                _jipt.push(['project', 'project-neo']);
+            </script>
+            <script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js"></script>
+        @endif
+
         <title>{{ config('app.name') }} - @yield('title', 'News')</title>
     </head>
 
