@@ -11,6 +11,6 @@ return [
     'news' => 'Новини',
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати новину',
-    'delete-post' => 'Delete Post'
+    'delete-post' => 'Видалити пост'
 
 ];
