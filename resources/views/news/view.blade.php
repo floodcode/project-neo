@@ -12,25 +12,26 @@
     </nav>
 
     <div class="row">
-        <div class="col">
+        <div class="col-md text-center text-md-left">
             <h3>{{ $item->title }}</h3>
         </div>
-        <div class="col text-right">
-            @if ($item->canEdit(auth()->user()))
+        @if ($item->canEdit(auth()->user()))
+        <div class="col-md text-center text-md-right">
+            <div class="mb-2">
                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
                     {{ __('button.edit-post') }}
                 </a>
                 <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
                     {{ __('button.delete-post') }}
                 </button>
-            @endif
+            </div>
         </div>
+        @endif
     </div>
     <p>{{ $item->message }}</p>
     <p class="text-muted" title="{{ $item->created_at }}">
         {{ $item->created_at->diffForHumans() }}
     </p>
-
 
     @include('news.components.delete-popup')
 @endsection

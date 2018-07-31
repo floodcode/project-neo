@@ -15,21 +15,23 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md text-center text-md-left">
                             <h3>
                                 <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->title }}</a>
                             </h3>
                         </div>
-                        <div class="col text-right">
-                            @if ($item->canEdit(auth()->user()))
+                        @if ($item->canEdit(auth()->user()))
+                        <div class="col-md text-center text-md-right">
+                            <div class="mb-2">
                                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
                                     {{ __('button.edit-post') }}
                                 </a>
                                 <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
                                     {{ __('button.delete-post') }}
                                 </button>
-                            @endif
+                            </div>
                         </div>
+                        @endif
                     </div>
 
                     <p class="card-text">

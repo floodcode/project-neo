@@ -2,17 +2,17 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ __('title.delete-post') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete this item?
+                {{ __('message.delete-this-item?') }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" id="delete-post-confirm">Delete</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('button.close') }}</button>
+                <button type="button" class="btn btn-danger" id="delete-post-confirm">{{ __('button.delete') }}</button>
             </div>
         </div>
     </div>
