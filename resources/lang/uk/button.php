@@ -7,7 +7,9 @@ return [
     'news' => 'Новини',
     'create' => 'Створити',
     'edit' => 'Редагувати',
+    'delete' => 'Delete',
     'cancel' => 'Відмінити',
+    'close' => 'Close',
 
     // Auth
     'login' => 'Увійти',
@@ -19,7 +21,7 @@ return [
 
     // News
     'add-post' => 'Додати новину',
-    'edit-post' => 'Редагувати новину',
-    'delete-post' => 'Delete post'
+    'edit-post' => 'Edit Post',
+    'delete-post' => 'Delete Post'
 
 ];
