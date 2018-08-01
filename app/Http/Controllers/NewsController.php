@@ -56,6 +56,7 @@ class NewsController extends Controller
         }
 
         if ($request->method() === 'POST') {
+            $request->flash();
             $data = $this->validate($request, $this->getValidationRules(), $this->getValidationMessages());
 
             $item->title = $data['title'];
