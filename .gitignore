@@ -1,13 +1,12 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+# IDE/Editors
 /.idea
 /.vscode
 /.vagrant
-Homestead.json
-Homestead.yaml
+
+# Other
+/node_modules
+/storage/*.key
+/vendor
 npm-debug.log
 yarn-error.log
 .env

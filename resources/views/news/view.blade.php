@@ -28,7 +28,12 @@
         </div>
         @endif
     </div>
-    <div>{!! $item->message !!}</div>
+    <div class="clearfix">
+        @if ($item->image)
+            <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+        @endif
+        {!! $item->message !!}
+    </div>
     <p class="text-muted" title="{{ $item->created_at }}">
         {{ $item->created_at->diffForHumans() }}
     </p>

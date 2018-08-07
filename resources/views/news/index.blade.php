@@ -34,7 +34,10 @@
                         @endif
                     </div>
 
-                    <div class="card-text">
+                    <div class="card-text clearfix">
+                        @if ($item->image)
+                            <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+                        @endif
                         {!! Str::words($item->message, 150, '') !!}
                         @if (Str::length($item->message) > 150)
                             <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ __('button.read-more') }}</a>
