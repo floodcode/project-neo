@@ -40,3 +40,5 @@ Route::get('/news/view/{id}', 'NewsController@view')->name('news.view');
 Route::match(['get', 'post'], '/news/create', 'NewsController@create')->name('news.create');
 Route::match(['get', 'post'], '/news/edit/{id}', 'NewsController@edit')->name('news.edit');
 Route::post('/news/delete/{id}', 'NewsController@delete');
+Route::post('/news/comment/create/{id}', 'NewsController@commentCreate')->name('news.comment.create');
+Route::post('/news/comment/delete/{id}', 'NewsController@commentDelete')->name('news.comment.delete');

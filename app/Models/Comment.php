@@ -7,19 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Traits\UserAccess;
 
-class News extends Model
+class Comment extends Model
 {
     use UserAccess;
 
-    protected $table = 'news';
+    protected $table = 'comments';
 
     protected function getAccessRole(): int
     {
-        return Roles::ROLE_ADMIN;
+        return Roles::ROLE_MODERATOR;
     }
 
-    public function comments()
+    public function user()
     {
-        return $this->hasMany('App\Models\Comment');
+        return $this->belongsTo('App\Models\User');
     }
+
 }

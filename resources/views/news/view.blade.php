@@ -15,7 +15,7 @@
         <div class="col-md text-center text-md-left">
             <h3>{{ $item->title }}</h3>
         </div>
-        @if ($item->canEdit(auth()->user()))
+        @if ($item->hasAccess(auth()->user()))
         <div class="col-md-4 text-center text-md-right">
             <div class="mb-2">
                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
@@ -37,8 +37,52 @@
     <p class="text-muted" title="{{ $item->created_at }}">
         {{ $item->created_at->diffForHumans() }}
     </p>
+    <div>
+        <h3>Comments</h3>
+
+        @if (count($item->comments))
+            @foreach ($item->comments as $comment)
+                <div class="card mb-3">
+                    <div class="card-body clearfix">
+                        @if ($item->hasAccess(Auth::user()))
+                            <div class="float-right">
+                                <button class="btn btn-sm btn-primary edit-comment">
+                                    {{ __('button.edit-comment') }}
+                                </button>
+                                <button class="btn btn-sm btn-danger delete-comment" data-id="{{ $comment->id }}">
+                                    {{ __('button.delete-comment') }}
+                                </button>
+                            </div>
+                        @endif
+                        {{ $comment->message }}
+                        <p class="text-muted mb-0">
+                            {{ __('label.author:') }}
+                            {{ $comment->user->name }} |
+                            {{ __('label.added:') }}
+                            {{ $comment->created_at->diffForHumans() }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+        @else
+            <h5 class="text-center muted">
+                {{ __('message.no-comments') }}
+            </h5>
+        @endif
+
+        @role('user')
+            @include('news.components.comment-form')
+        @endrole
+
+        @guest
+            <h4 class="text-center muted mt-5 mb-5">
+                {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
+            </h4>
+        @endguest
+    </div>
 
     @include('news.components.delete-popup')
+    @include('news.components.comment-delete-popup')
 @endsection
 
 @section('scripts')

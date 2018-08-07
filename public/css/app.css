@@ -9,3 +9,7 @@ img.news-image {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+.muted {
+    color: #6c757d;
+}

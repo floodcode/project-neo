@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,7 @@ class NewsController extends Controller
         }
 
         $request->flash();
-        $data = $this->validate($request, $this->getValidationRules(), $this->getValidationMessages());
+        $data = $this->validate($request, $this->newsRules(), $this->newsMessages());
         $data['user-id'] = Auth::user()->id;
 
         $item = new News();
@@ -54,7 +55,7 @@ class NewsController extends Controller
     public function edit(Request $request, $id)
     {
         $item = News::findOrFail($id);
-        if (!$item->canEdit(Auth::user())) {
+        if (!$item->hasAccess(Auth::user())) {
             abort(403);
         }
 
@@ -65,7 +66,7 @@ class NewsController extends Controller
         }
 
         $request->flash();
-        $data = $this->validate($request, $this->getValidationRules(), $this->getValidationMessages());
+        $data = $this->validate($request, $this->newsRules(), $this->newsMessages());
         $this->prefillNewsPost($item, $data);
         $item->save();
 
@@ -75,7 +76,7 @@ class NewsController extends Controller
     public function delete($id): JsonResponse
     {
         $item = News::findOrFail($id);
-        if (!$item->canEdit(Auth::user())) {
+        if (!$item->hasAccess(Auth::user())) {
             return $this->jsonError(__('message.error.not-authorized'));
         }
 
@@ -87,7 +88,7 @@ class NewsController extends Controller
         return $this->jsonSuccess();
     }
 
-    protected function getValidationRules(): array
+    protected function newsRules(): array
     {
         return [
             'title' => 'required|max:255',
@@ -96,7 +97,7 @@ class NewsController extends Controller
         ];
     }
 
-    protected function getValidationMessages(): array
+    protected function newsMessages(): array
     {
         return [
             'title.required' => __('message.validation.news-title-required'),
@@ -126,5 +127,48 @@ class NewsController extends Controller
         if (array_key_exists('user-id', $data)) {
             $item->user_id = $data['user-id'];
         }
+    }
+
+    public function commentCreate(Request $request, $id)
+    {
+        $newsItem = News::findOrFail($id);
+        if (!$newsItem) {
+            return $this->jsonError();
+        }
+
+        $data = $this->validate($request, $this->commentRules(), $this->commentMessages());
+
+        $item = new Comment();
+        $item->news_id = $id;
+        $item->user_id = Auth::user()->id;
+        $item->message = $data['message'];
+        $item->save();
+
+        return $this->jsonSuccess();
+    }
+
+    public function commentDelete(Request $request, $id)
+    {
+        $item = Comment::findOrFail($id);
+        if (!$item->hasAccess(Auth::user())) {
+            return $this->jsonError();
+        }
+
+        $item->delete();
+        return $this->jsonSuccess();
+    }
+
+    protected function commentRules(): array
+    {
+        return [
+            'message' => 'required'
+        ];
+    }
+
+    protected function commentMessages(): array
+    {
+        return [
+            'message.required' => __('message.validation.comment-message-required')
+        ];
     }
 }

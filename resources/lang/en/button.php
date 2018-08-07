@@ -23,6 +23,9 @@ return [
     'add-post' => 'Add New Post',
     'edit-post' => 'Edit Post',
     'delete-post' => 'Delete Post',
-    'read-more' => 'Read More'
+    'read-more' => 'Read More',
+    'add-comment' => 'Add Comment',
+    'delete-comment' => 'Delete',
+    'edit-comment' => 'Edit'
 
 ];

@@ -3,6 +3,8 @@
 return [
 
     // Generic
+    'author:' => 'Author:',
+    'added:' => 'Added:',
     'choose-file' => 'Choose File',
 
     // Auth

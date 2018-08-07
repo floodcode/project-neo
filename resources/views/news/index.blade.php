@@ -20,7 +20,7 @@
                                 <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->title }}</a>
                             </h3>
                         </div>
-                        @if ($item->canEdit(auth()->user()))
+                        @if ($item->hasAccess(auth()->user()))
                         <div class="col-md-4 text-center text-md-right">
                             <div class="mb-2">
                                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
@@ -52,9 +52,9 @@
         @endforeach
 
         @role('poster')
-        <div class="text-center mb-3">
-            <a class="btn btn-primary" href="{{ route('news.create') }}">{{ __('button.add-post') }}</a>
-        </div>
+            <div class="text-center mb-3">
+                <a class="btn btn-primary" href="{{ route('news.create') }}">{{ __('button.add-post') }}</a>
+            </div>
         @endrole
 
         <div class="paginator">
