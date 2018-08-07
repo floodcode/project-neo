@@ -23,6 +23,9 @@ return [
     'add-post' => 'Добавить новость',
     'edit-post' => 'Редактировать пост',
     'delete-post' => 'Удалить пост',
-    'read-more' => 'Подробнее'
+    'read-more' => 'Подробнее',
+    'add-comment' => 'Добавить комментарий',
+    'delete-comment' => 'Удалить',
+    'edit-comment' => 'Редактировать'
 
 ];

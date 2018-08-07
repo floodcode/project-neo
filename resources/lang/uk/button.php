@@ -23,6 +23,9 @@ return [
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати пост',
     'delete-post' => 'Видалити пост',
-    'read-more' => 'Читати далі'
+    'read-more' => 'Читати далі',
+    'add-comment' => 'Додати коментар',
+    'delete-comment' => 'Видалити',
+    'edit-comment' => 'Редагувати'
 
 ];

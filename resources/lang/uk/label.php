@@ -3,6 +3,8 @@
 return [
 
     // Generic
+    'author:' => 'Автор:',
+    'added:' => 'Додано:',
     'choose-file' => 'Вибрати Файл',
 
     // Auth
