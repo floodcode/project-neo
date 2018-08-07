@@ -23,6 +23,6 @@ return [
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати пост',
     'delete-post' => 'Видалити пост',
-    'read-more' => 'Read More'
+    'read-more' => 'Читати далі'
 
 ];

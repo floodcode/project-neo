@@ -2,6 +2,9 @@
 
 return [
 
+    // Generic
+    'choose-file' => 'Вибрати Файл',
+
     // Auth
     'name' => 'Ім\'я',
     'email-address' => 'E-mail адреса',
@@ -11,6 +14,7 @@ return [
 
     // News
     'title' => 'Заголовок',
-    'message' => 'Повідомлення'
+    'message' => 'Повідомлення',
+    'post-image' => 'Зображення поста'
 
 ];
