@@ -10,7 +10,7 @@ deploy_production:
     name: production
     url: http://project-neo.tk
   only:
-    - master
+    - tags
   script:
     # Prepare build to deployment
     - 'mkdir -p /var/www/releases'
