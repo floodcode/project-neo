@@ -2,6 +2,9 @@
 
 return [
 
+    // Generic
+    'choose-file' => 'crwdns94986:0crwdne94986:0',
+
     // Auth
     'name' => 'crwdns94959:0crwdne94959:0',
     'email-address' => 'crwdns94960:0crwdne94960:0',
@@ -11,6 +14,7 @@ return [
 
     // News
     'title' => 'crwdns94964:0crwdne94964:0',
-    'message' => 'crwdns94974:0crwdne94974:0'
+    'message' => 'crwdns94974:0crwdne94974:0',
+    'post-image' => 'crwdns94987:0crwdne94987:0'
 
 ];
