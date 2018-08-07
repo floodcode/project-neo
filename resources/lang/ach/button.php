@@ -23,6 +23,9 @@ return [
     'add-post' => 'crwdns94957:0crwdne94957:0',
     'edit-post' => 'crwdns94981:0crwdne94981:0',
     'delete-post' => 'crwdns94982:0crwdne94982:0',
-    'read-more' => 'crwdns94985:0crwdne94985:0'
+    'read-more' => 'crwdns94985:0crwdne94985:0',
+    'add-comment' => 'crwdns94988:0crwdne94988:0',
+    'delete-comment' => 'crwdns94989:0crwdne94989:0',
+    'edit-comment' => 'crwdns94990:0crwdne94990:0'
 
 ];
