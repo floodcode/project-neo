@@ -13,6 +13,7 @@ return [
     'edit-post' => 'Edit Post',
     'delete-post' => 'Delete Post',
     'add-comment' => 'Add Comment',
-    'delete-comment' => 'Delete Comment'
+    'delete-comment' => 'Delete Comment',
+    'comments' => 'Comments'
 
 ];

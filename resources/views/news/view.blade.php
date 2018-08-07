@@ -19,10 +19,10 @@
         <div class="col-md-4 text-center text-md-right">
             <div class="mb-2">
                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
-                    {{ __('button.edit-post') }}
+                    {{ __('button.edit') }}
                 </a>
                 <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
-                    {{ __('button.delete-post') }}
+                    {{ __('button.delete') }}
                 </button>
             </div>
         </div>
@@ -38,7 +38,7 @@
         {{ $item->created_at->diffForHumans() }}
     </p>
     <div>
-        <h3>Comments</h3>
+        <h3>{{ __('title.comments') }}</h3>
 
         @if (count($item->comments))
             @foreach ($item->comments as $comment)
@@ -46,9 +46,6 @@
                     <div class="card-body clearfix">
                         @if ($item->hasAccess(Auth::user()))
                             <div class="float-right">
-                                <button class="btn btn-sm btn-primary edit-comment">
-                                    {{ __('button.edit-comment') }}
-                                </button>
                                 <button class="btn btn-sm btn-danger delete-comment" data-id="{{ $comment->id }}">
                                     {{ __('button.delete-comment') }}
                                 </button>
@@ -64,8 +61,12 @@
                     </div>
                 </div>
             @endforeach
+        @elseguest
+            <h5 class="text-center muted m-5">
+                {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
+            </h5>
         @else
-            <h5 class="text-center muted">
+            <h5 class="text-center muted m-5">
                 {{ __('message.no-comments') }}
             </h5>
         @endif
@@ -73,12 +74,6 @@
         @role('user')
             @include('news.components.comment-form')
         @endrole
-
-        @guest
-            <h4 class="text-center muted mt-5 mb-5">
-                {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
-            </h4>
-        @endguest
     </div>
 
     @include('news.components.delete-popup')
