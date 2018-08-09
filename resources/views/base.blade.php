@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/app.css">
+        {!! includeExternalStyle('https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css') !!}
+        {!! includeStyle('/css/app.css') !!}
 
         @yield('styles')
 
@@ -18,6 +18,8 @@
             </script>
             <script type="text/javascript" src="//cdn.crowdin.com/jipt/jipt.js"></script>
         @endif
+
+        @yield('head-scripts')
 
         <title>{{ config('app.name') }} - @yield('title', 'News')</title>
     </head>
@@ -74,10 +76,11 @@
             <p>&copy; {{ config('app.name') }}</p>
         </footer>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-        {!! includeAsset('/js/app.js') !!}
+        {!! includeExternalScript('https://code.jquery.com/jquery-3.3.1.min.js') !!}
+        {!! includeExternalScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js') !!}
+        {!! includeExternalScript('https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js') !!}
+
+        {!! includeScript('/js/app.js') !!}
         @yield('scripts')
     </body>
 </html>

@@ -2,6 +2,10 @@
 
 @section('title', 'Register')
 
+@section('head-scripts')
+    {!! includeExternalScript('https://www.google.com/recaptcha/api.js') !!}
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -62,6 +66,23 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+                        @recaptcha
+                            <div class="form-group row">
+                                <div class="col-md-4"></div>
+
+                                <div class="col-md-6">
+                                    <input type="hidden" name="captcha" class="recaptha-result" required>
+                                    @include('components.recaptcha')
+
+                                    @if ($errors->has('captcha'))
+                                        <span class="invalid-feedback d-block" role="alert">
+                                            <strong>{{ $errors->first('captcha') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        @endrecaptcha
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

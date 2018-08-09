@@ -35,10 +35,10 @@
 </form>
 
 @section('scripts')
-    {!! includeAsset('/ckeditor/ckeditor.js') !!}
+    {!! includeScript('/ckeditor/ckeditor.js') !!}
     <script>
         CKEDITOR.replace('news-create-message');
     </script>
 
-    {!! includeAsset('/js/module/news.editor.js') !!}
+    {!! includeScript('/js/module/news.editor.js') !!}
 @endsection

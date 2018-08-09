@@ -81,5 +81,5 @@
 @endsection
 
 @section('scripts')
-    {!! includeAsset('/js/module/news.js') !!}
+    {!! includeScript('/js/module/news.js') !!}
 @endsection
