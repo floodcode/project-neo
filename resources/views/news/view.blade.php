@@ -30,7 +30,9 @@
     </div>
     <div class="clearfix">
         @if ($item->image)
-            <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+            <a href="/public/img/news/{{ $item->image }}">
+                <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+            </a>
         @endif
         {!! $item->message !!}
     </div>
@@ -38,9 +40,8 @@
         {{ $item->created_at->diffForHumans() }}
     </p>
     <div>
-        <h3>{{ __('title.comments') }}</h3>
-
         @if (count($item->comments))
+            <h3>{{ __('title.comments') }}</h3>
             @foreach ($item->comments as $comment)
                 <div class="card mb-3">
                     <div class="card-body clearfix">

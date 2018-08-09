@@ -36,7 +36,9 @@
 
                     <div class="card-text clearfix">
                         @if ($item->image)
-                            <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+                            <a href="{{ route('news.view', ['id' => $item->id]) }}">
+                                <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+                            </a>
                         @endif
                         {!! Str::words($item->message, 150, '') !!}
                         @if (Str::length($item->message) > 150)
