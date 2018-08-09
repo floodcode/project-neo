@@ -30,3 +30,13 @@ function recaptchaAvailable(): bool
 {
     return !empty(config('recaptcha.key')) && !empty(config('recaptcha.secret'));
 }
+
+function userHasRole(string $roleName): bool
+{
+    $user = auth()->user();
+    if (!$user) {
+        return false;
+    }
+
+    return $user->hasRoleName($roleName);
+}

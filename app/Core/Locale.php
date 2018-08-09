@@ -16,6 +16,13 @@ class Locale
         'ach' => 'translate'
     ];
 
+    public static function init()
+    {
+        $host = request()->getHttpHost();
+        $locale = self::getLocaleByHost($host);
+        app()->setLocale($locale);
+    }
+
     public static function getLocales(): array
     {
         return array_keys(self::$locales);
