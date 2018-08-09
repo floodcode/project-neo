@@ -44,7 +44,7 @@
             @foreach ($item->comments as $comment)
                 <div class="card mb-3">
                     <div class="card-body clearfix">
-                        @if ($item->hasAccess(Auth::user()))
+                        @if ($item->hasAccess(auth()->user()))
                             <div class="float-right">
                                 <button class="btn btn-sm btn-danger delete-comment" data-id="{{ $comment->id }}">
                                     {{ __('button.delete-comment') }}

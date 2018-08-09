@@ -5,11 +5,11 @@ namespace App\Models;
 use App\Core\Roles;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Traits\UserAccess;
+use App\Models\Traits\HasUser;
 
 class News extends Model
 {
-    use UserAccess;
+    use HasUser;
 
     protected $table = 'news';
 
