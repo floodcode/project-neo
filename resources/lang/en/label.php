@@ -5,6 +5,8 @@ return [
     // Generic
     'author:' => 'Author:',
     'added:' => 'Added:',
+    'comments:' => 'Comments:',
+    'role:' => 'Role:',
     'choose-file' => 'Choose File',
 
     // Auth

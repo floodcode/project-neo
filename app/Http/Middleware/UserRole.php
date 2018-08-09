@@ -15,9 +15,9 @@ class UserRole
     public function __construct()
     {
         $roles = Roles::getRoles();
-        foreach ($roles as $roleCode => $roleName)
+        foreach ($roles as $roleCode => $roleFields)
         {
-            $this->roleNameMap[$roleName] = $roleCode;
+            $this->roleNameMap[$roleFields[Roles::FIELD_NAME]] = $roleCode;
         }
     }
 

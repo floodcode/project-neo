@@ -26,6 +26,9 @@ return [
     'read-more' => 'Read More',
     'add-comment' => 'Add Comment',
     'delete-comment' => 'Delete',
-    'edit-comment' => 'Edit'
+    'edit-comment' => 'Edit',
+
+    // Users
+    'users' => 'Users'
 
 ];

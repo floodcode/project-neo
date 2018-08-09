@@ -31,21 +31,27 @@
     <div class="clearfix">
         @if ($item->image)
             <a href="/public/img/news/{{ $item->image }}">
-                <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+                <img class="news-image float-left"
+                     src="/public/img/news/{{ $item->image }}"
+                     title="{{ $item->title }}"
+                     alt="{{ $item->title }}">
             </a>
         @endif
         {!! $item->message !!}
     </div>
-    <p class="text-muted" title="{{ $item->created_at }}">
+    <p class="text-muted">
+        {{ __('label.author:') }}
+        <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
+        {{ __('label.added:') }}
         {{ $item->created_at->diffForHumans() }}
     </p>
-    <div>
+    <div id="comments">
         @if (count($item->comments))
             <h3>{{ __('title.comments') }}</h3>
             @foreach ($item->comments as $comment)
                 <div class="card mb-3">
-                    <div class="card-body clearfix">
-                        @if ($item->hasAccess(auth()->user()))
+                    <div class="card-body clearfix p-3">
+                        @if ($comment->hasAccess(auth()->user()))
                             <div class="float-right">
                                 <button class="btn btn-sm btn-danger delete-comment" data-id="{{ $comment->id }}">
                                     {{ __('button.delete-comment') }}
@@ -55,7 +61,7 @@
                         {{ $comment->message }}
                         <p class="text-muted mb-0">
                             {{ __('label.author:') }}
-                            {{ $comment->user->name }} |
+                            <a href="{{ route('user.view', ['id' => $comment->user->id]) }}">{{ $comment->user->name }}</a>,
                             {{ __('label.added:') }}
                             {{ $comment->created_at->diffForHumans() }}
                         </p>

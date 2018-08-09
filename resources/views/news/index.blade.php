@@ -37,7 +37,10 @@
                     <div class="card-text clearfix">
                         @if ($item->image)
                             <a href="{{ route('news.view', ['id' => $item->id]) }}">
-                                <img class="news-image float-left" src="/public/img/news/{{ $item->image }}" alt="">
+                                <img class="news-image float-left"
+                                     src="/public/img/news/{{ $item->image }}"
+                                     title="{{ $item->title }}"
+                                     alt="{{ $item->title }}">
                             </a>
                         @endif
                         {!! Str::words($item->message, 150, '') !!}
@@ -46,7 +49,12 @@
                         @endif
                     </div>
 
-                    <p class="card-text text-muted" title="{{ $item->created_at }}">
+                    <p class="text-muted mb-0">
+                        {{ __('label.author:') }}
+                        <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
+                        {{ __('label.comments:') }}
+                        <a href="{{ route('news.view', ['id' => $item->id]) }}#comments">{{ count($item->comments) }}</a>,
+                        {{ __('label.added:') }}
                         {{ $item->created_at->diffForHumans() }}
                     </p>
                 </div>

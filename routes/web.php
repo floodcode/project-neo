@@ -42,3 +42,9 @@ Route::match(['get', 'post'], '/news/edit/{id}', 'NewsController@edit')->name('n
 Route::post('/news/delete/{id}', 'NewsController@delete');
 Route::post('/news/comment/create/{id}', 'NewsController@commentCreate')->name('news.comment.create');
 Route::post('/news/comment/delete/{id}', 'NewsController@commentDelete')->name('news.comment.delete');
+
+/**
+ * User routes
+ */
+Route::get('/users', 'UserController@index')->name('user.index');
+Route::get('/user/{id}', 'UserController@view')->name('user.view');

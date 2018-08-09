@@ -17,7 +17,7 @@ class NewsController extends Controller
     public function __construct()
     {
         $this->middleware('role:poster', ['only' => [
-            'create', 'edit', 'delete'
+            'create'
         ]]);
     }
 
