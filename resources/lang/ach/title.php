@@ -13,6 +13,7 @@ return [
     'edit-post' => 'crwdns94972:0crwdne94972:0',
     'delete-post' => 'crwdns94984:0crwdne94984:0',
     'add-comment' => 'crwdns94996:0crwdne94996:0',
-    'delete-comment' => 'crwdns94997:0crwdne94997:0'
+    'delete-comment' => 'crwdns94997:0crwdne94997:0',
+    'comments' => 'crwdns94998:0crwdne94998:0'
 
 ];

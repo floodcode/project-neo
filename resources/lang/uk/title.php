@@ -13,6 +13,7 @@ return [
     'edit-post' => 'Редагувати новину',
     'delete-post' => 'Видалити пост',
     'add-comment' => 'Додати коментар',
-    'delete-comment' => 'Видалити коментар'
+    'delete-comment' => 'Видалити коментар',
+    'comments' => 'Коментарі'
 
 ];
