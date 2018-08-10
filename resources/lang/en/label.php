@@ -2,6 +2,13 @@
 
 return [
 
+    'language' => [
+        'en' => 'English',
+        'ru' => 'Russian',
+        'uk' => 'Ukrainian',
+        'ach' => 'Translate'
+    ],
+
     // Generic
     'author:' => 'Author:',
     'added:' => 'Added:',

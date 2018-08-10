@@ -12,8 +12,8 @@ class Locale
      * Available locales
      */
     protected static $locales = [
-        'uk' => 'uk',
         'en' => 'en',
+        'uk' => 'uk',
         'ru' => 'ru',
         'ach' => 'translate'
     ];
@@ -25,9 +25,14 @@ class Locale
         app()->setLocale($locale);
     }
 
+    public static function getHostMapping(): array
+    {
+        return self::$locales;
+    }
+
     public static function getLocales(): array
     {
-        return array_keys(self::$locales) - [self::PSEUDO_LOCALE];
+        return array_keys(self::$locales);
     }
 
     public static function getSubdomains(): array

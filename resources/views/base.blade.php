@@ -77,15 +77,13 @@
                 <div class="col-md">
                     <p class="mt-2 mb-2">&copy; {{ config('app.name') }}</p>
                 </div>
-                @if (app()->getLocale() != \App\Core\Locale::PSEUDO_LOCALE)
-                    <div class="col-md text-right">
-                        <select class="custom-select" id="language-select">
-                            <option value="en">English</option>
-                            <option value="ru">Russian</option>
-                            <option value="uk">Ukrainian</option>
-                        </select>
-                    </div>
-                @endif
+                <div class="col-md text-right">
+                    <select class="custom-select" id="language-select">
+                        @foreach(\App\Core\Locale::getHostMapping() as $code => $subdomain)
+                            <option {{ app()->getLocale() == $code ? 'selected' : '' }} value="{{ $subdomain }}">{{ __('label.language.' . $code) }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
         </footer>
 
