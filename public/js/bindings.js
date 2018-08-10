@@ -2,7 +2,12 @@
 
 $(function() {
     // Footer language selector
-    $('#language-select').on('change', function() {
-        window.location.host = $(this).val() + '.' + App.host;
+    $('#language-select .dropdown-item').on('click', function() {
+        var me = $(this),
+            subdomain = me.data('subdomain');
+
+        if (!me.hasClass('active')) {
+            window.location.host = subdomain + '.' + App.host;
+        }
     });
 });

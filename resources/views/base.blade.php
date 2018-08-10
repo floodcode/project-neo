@@ -73,16 +73,24 @@
 
         <footer class="container">
             <hr>
-            <div class="row mb-2">
+            <div class="row mb-3">
                 <div class="col-md">
                     <p class="mt-2 mb-2">&copy; {{ config('app.name') }}</p>
                 </div>
                 <div class="col-md text-right">
-                    <select class="custom-select" id="language-select">
-                        @foreach(\App\Core\Locale::getHostMapping() as $code => $subdomain)
-                            <option {{ app()->getLocale() == $code ? 'selected' : '' }} value="{{ $subdomain }}">{{ __('label.language.' . $code) }}</option>
-                        @endforeach
-                    </select>
+                    <div class="dropup" id="language-select">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ __('label.language') }}
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            @foreach(\App\Core\Locale::getHostMapping() as $code => $subdomain)
+                                <button class="dropdown-item{{ app()->getLocale() == $code ? ' active' : '' }}" data-subdomain="{{ $subdomain }}">
+                                    <span class="lang-flag lang-flag-{{ $subdomain }}"></span>
+                                    {{ __('label.language-name.' . $code) }}
+                                </button>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>

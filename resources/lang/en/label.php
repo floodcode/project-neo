@@ -2,7 +2,9 @@
 
 return [
 
-    'language' => [
+    'language' => 'Language',
+
+    'language-name' => [
         'en' => 'English',
         'ru' => 'Russian',
         'uk' => 'Ukrainian',

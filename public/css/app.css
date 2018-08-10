@@ -1,3 +1,6 @@
+/**
+ * News
+ */
 div.paginator ul.pagination {
     width: fit-content;
     margin: 0 auto;
@@ -10,9 +13,47 @@ img.news-image {
     border-radius: 5px;
 }
 
+/**
+ * Language selector
+ */
+
 select#language-select {
     width: 150px;
 }
+
+span.lang-flag {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    width: 1.33333333em;
+    line-height: 1em;
+}
+
+span.lang-flag:before {
+    content: "\00a0";
+}
+
+span.lang-flag-en {
+    background-image: url(/img/flags/us.svg);
+}
+
+span.lang-flag-uk {
+    background-image: url(/img/flags/ua.svg);
+}
+
+span.lang-flag-ru {
+    background-image: url(/img/flags/ru.svg);
+}
+
+span.lang-flag-translate {
+    background-image: url(/img/flags/translate.svg);
+}
+
+/**
+ * General
+ */
 
 .muted {
     color: #6c757d;
