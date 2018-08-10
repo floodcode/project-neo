@@ -14,6 +14,17 @@ return [
     'delete-post' => 'crwdns94984:0crwdne94984:0',
     'add-comment' => 'crwdns94996:0crwdne94996:0',
     'delete-comment' => 'crwdns94997:0crwdne94997:0',
-    'comments' => 'crwdns94998:0crwdne94998:0'
+    'comments' => 'crwdns94998:0crwdne94998:0',
+
+    // Users
+    'role' => [
+        'master' => 'crwdns95086:0crwdne95086:0',
+        'admin' => 'crwdns95087:0crwdne95087:0',
+        'moderator' => 'crwdns95088:0crwdne95088:0',
+        'poster' => 'crwdns95089:0crwdne95089:0',
+        'user' => 'crwdns95090:0crwdne95090:0',
+        'banned' => 'crwdns95091:0crwdne95091:0'
+    ],
+    'users' => 'crwdns95093:0crwdne95093:0'
 
 ];

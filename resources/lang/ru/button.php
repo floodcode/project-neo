@@ -26,6 +26,9 @@ return [
     'read-more' => 'Подробнее',
     'add-comment' => 'Добавить комментарий',
     'delete-comment' => 'Удалить',
-    'edit-comment' => 'Редактировать'
+    'edit-comment' => 'Редактировать',
+
+    // Users
+    'users' => 'Пользователи'
 
 ];

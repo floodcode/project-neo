@@ -26,6 +26,9 @@ return [
     'read-more' => 'crwdns94985:0crwdne94985:0',
     'add-comment' => 'crwdns94988:0crwdne94988:0',
     'delete-comment' => 'crwdns94989:0crwdne94989:0',
-    'edit-comment' => 'crwdns94990:0crwdne94990:0'
+    'edit-comment' => 'crwdns94990:0crwdne94990:0',
+
+    // Users
+    'users' => 'crwdns95083:0crwdne95083:0'
 
 ];
