@@ -2,12 +2,12 @@
 
 return [
 
-    'language' => 'Мова',
+    'language' => 'Language',
 
     'language-name' => [
-        'en' => 'Англійська',
-        'ru' => 'Російська',
-        'uk' => 'Українська',
+        'en' => 'English',
+        'ru' => 'Russian',
+        'uk' => 'Ukrainian',
         'ach' => 'Перекласти'
     ],
 
