@@ -5,6 +5,8 @@ return [
     // Generic
     'author:' => 'crwdns94991:0crwdne94991:0',
     'added:' => 'crwdns94992:0crwdne94992:0',
+    'comments:' => 'crwdns95084:0crwdne95084:0',
+    'role:' => 'crwdns95085:0crwdne95085:0',
     'choose-file' => 'crwdns94986:0crwdne94986:0',
 
     // Auth

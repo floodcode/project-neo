@@ -26,6 +26,9 @@ return [
     'read-more' => 'Читати далі',
     'add-comment' => 'Додати коментар',
     'delete-comment' => 'Видалити',
-    'edit-comment' => 'Редагувати'
+    'edit-comment' => 'Редагувати',
+
+    // Users
+    'users' => 'Користувачі'
 
 ];
