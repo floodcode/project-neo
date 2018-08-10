@@ -25,6 +25,6 @@ return [
         'user' => 'User',
         'banned' => 'Banned'
     ],
-    'users' => 'users'
+    'users' => 'Users'
 
 ];
