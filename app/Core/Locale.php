@@ -6,6 +6,8 @@ class Locale
 {
     const DEFAULT_LOCALE = 'uk';
 
+    const PSEUDO_LOCALE = 'ach';
+
     /**
      * Available locales
      */
@@ -25,7 +27,7 @@ class Locale
 
     public static function getLocales(): array
     {
-        return array_keys(self::$locales);
+        return array_keys(self::$locales) - [self::PSEUDO_LOCALE];
     }
 
     public static function getSubdomains(): array

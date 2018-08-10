@@ -10,6 +10,10 @@ img.news-image {
     border-radius: 5px;
 }
 
+select#language-select {
+    width: 150px;
+}
+
 .muted {
     color: #6c757d;
 }

@@ -1,6 +1,13 @@
 'use strict';
 
 var App = {
+    debug: false,
+    host: '',
+    init: function(config) {
+        this.debug = config.debug;
+        this.host = config.host;
+        this.log('App init');
+    },
     sendRequest: function(url, data = null, callback = null) {
         $.ajax({
             url: url,
@@ -19,6 +26,11 @@ var App = {
             recaptchaInput.val(result);
             recaptchaInput.trigger('input');
         }
+    },
+    log: function(message) {
+        if (this.debug) {
+            console.log(message);
+        }
     }
 };
 
@@ -27,14 +39,17 @@ var App = {
  */
 
 function recaptchaCallback(result) {
+    App.log("Recaptcha updated:\n" + result);
     App.recaptchaUpdate(result);
 }
 
 function recaptchaExpiredCallback() {
+    App.log('Recaptcha expired');
     App.recaptchaUpdate('');
 }
 
 function recaptchaErrorCallback() {
+    App.log('Recaptcha error');
     App.recaptchaUpdate('');
 }
 

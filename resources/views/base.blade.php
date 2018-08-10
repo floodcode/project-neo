@@ -73,7 +73,20 @@
 
         <footer class="container">
             <hr>
-            <p>&copy; {{ config('app.name') }}</p>
+            <div class="row mb-2">
+                <div class="col-md">
+                    <p class="mt-2 mb-2">&copy; {{ config('app.name') }}</p>
+                </div>
+                @if (app()->getLocale() != \App\Core\Locale::PSEUDO_LOCALE)
+                    <div class="col-md text-right">
+                        <select class="custom-select" id="language-select">
+                            <option value="en">English</option>
+                            <option value="ru">Russian</option>
+                            <option value="uk">Ukrainian</option>
+                        </select>
+                    </div>
+                @endif
+            </div>
         </footer>
 
         {!! includeExternalScript('https://code.jquery.com/jquery-3.3.1.min.js') !!}
@@ -81,6 +94,11 @@
         {!! includeExternalScript('https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js') !!}
 
         {!! includeScript('/js/app.js') !!}
+
+        @include('init')
+
+        {!! includeScript('/js/bindings.js') !!}
+
         @yield('scripts')
     </body>
 </html>
