@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        {!! includeExternalStyle('https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css') !!}
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+
+        {!! includeStyle('/css/lib/bootstrap.min.css') !!}
+
         {!! includeStyle('/css/app.css') !!}
 
         @yield('styles')
@@ -95,9 +100,10 @@
             </div>
         </footer>
 
-        {!! includeExternalScript('https://code.jquery.com/jquery-3.3.1.min.js') !!}
-        {!! includeExternalScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js') !!}
-        {!! includeExternalScript('https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js') !!}
+        {!! includeScript('/js/lib/jquery.min.js') !!}
+        {!! includeScript('/js/lib/popper.min.js') !!}
+        {!! includeScript('/js/lib/bootstrap.min.js') !!}
+        {!! includeScript('/js/lib/moment.min.js') !!}
 
         {!! includeScript('/js/app.js') !!}
 

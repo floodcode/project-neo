@@ -6,7 +6,6 @@ var App = {
     init: function(config) {
         this.debug = config.debug;
         this.host = config.host;
-        this.log('App init');
     },
     sendRequest: function(url, data = null, callback = null) {
         $.ajax({

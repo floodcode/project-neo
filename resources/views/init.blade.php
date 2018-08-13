@@ -1,8 +1,8 @@
 <script type="text/javascript">
-    var appConfig = {
+    moment.locale('{{ app()->getLocale() }}');
+
+    App.init({
         debug: {{ app()->environment('dev') ? 'true' : 'false' }},
         host: '{{ config('app.host') }}'
-    };
-
-    App.init(appConfig);
+    });
 </script>

@@ -23,10 +23,6 @@
                 </div>
             </div>
         @endforeach
-    @elseguest
-        <h5 class="text-center muted m-5">
-            {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
-        </h5>
     @endif
 
     @role('user')
@@ -39,6 +35,10 @@
         <div class="form-group text-right">
             <button id="comment-create" data-id="{{ $item->id }}" class="btn btn-primary">{{ __('button.add-comment') }}</button>
         </div>
+    @else
+        <h5 class="text-center muted m-5">
+            {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
+        </h5>
     @endrole
 </div>
 
