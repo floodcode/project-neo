@@ -5,7 +5,7 @@
  */
 function includeScript(string $path): string
 {
-    return '<script src="' . $path . '"></script>';
+    return '<script src="' . $path . '?version=' . config('app.version') . '"></script>';
 }
 
 function includeExternalScript(string $path): string
@@ -18,7 +18,7 @@ function includeExternalScript(string $path): string
  */
 function includeStyle(string $path): string
 {
-    return '<link rel="stylesheet" href="' . $path . '">';
+    return '<link rel="stylesheet" href="' . $path . '?version=' . config('app.version') . '">';
 }
 
 function includeExternalStyle(string $path): string
