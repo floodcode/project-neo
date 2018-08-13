@@ -16,16 +16,16 @@
             <h3>{{ $item->title }}</h3>
         </div>
         @if ($item->hasAccess(auth()->user()))
-        <div class="col-md-4 text-center text-md-right">
-            <div class="mb-2">
-                <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
-                    {{ __('button.edit') }}
-                </a>
-                <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
-                    {{ __('button.delete') }}
-                </button>
+            <div class="col-md-4 text-center text-md-right">
+                <div class="mb-2">
+                    <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
+                        {{ __('button.edit') }}
+                    </a>
+                    <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
+                        {{ __('button.delete') }}
+                    </button>
+                </div>
             </div>
-        </div>
         @endif
     </div>
     <div class="clearfix">
@@ -39,52 +39,16 @@
         @endif
         {!! $item->message !!}
     </div>
+
     <p class="text-muted">
         {{ __('label.author:') }}
         <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
         {{ __('label.added:') }}
         {{ $item->created_at->diffForHumans() }}
     </p>
-    <div id="comments">
-        @if (count($item->comments))
-            <h3>{{ __('title.comments') }}</h3>
-            @foreach ($item->comments as $comment)
-                <div class="card mb-3">
-                    <div class="card-body clearfix p-3">
-                        @if ($comment->hasAccess(auth()->user()))
-                            <div class="float-right">
-                                <button class="btn btn-sm btn-danger delete-comment" data-id="{{ $comment->id }}">
-                                    {{ __('button.delete-comment') }}
-                                </button>
-                            </div>
-                        @endif
-                        {{ $comment->message }}
-                        <p class="text-muted mb-0">
-                            {{ __('label.author:') }}
-                            <a href="{{ route('user.view', ['id' => $comment->user->id]) }}">{{ $comment->user->name }}</a>,
-                            {{ __('label.added:') }}
-                            {{ $comment->created_at->diffForHumans() }}
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-        @elseguest
-            <h5 class="text-center muted m-5">
-                {!! sprintf(__('message.comments-guest-message'), route('login')) !!}
-            </h5>
-        @else
-            <h5 class="text-center muted m-5">
-                {{ __('message.no-comments') }}
-            </h5>
-        @endif
 
-        @role('user')
-            @include('news.components.comment-form')
-        @endrole
-    </div>
-
+    @include('news.components.comments')
     @include('news.components.delete-popup')
-    @include('news.components.comment-delete-popup')
 @endsection
 
 @section('scripts')
