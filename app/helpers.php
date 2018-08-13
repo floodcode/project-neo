@@ -1,8 +1,5 @@
 <?php
 
-/**
- * CDN might be used in future
- */
 function includeScript(string $path): string
 {
     return '<script src="' . $path . '?version=' . config('app.version') . '"></script>';
@@ -13,9 +10,6 @@ function includeExternalScript(string $path): string
     return '<script src="' . $path . '"></script>';
 }
 
-/**
- * CDN might be used in future
- */
 function includeStyle(string $path): string
 {
     return '<link rel="stylesheet" href="' . $path . '?version=' . config('app.version') . '">';
