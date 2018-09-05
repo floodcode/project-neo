@@ -17,6 +17,7 @@ return [
     'comments' => 'Comments',
 
     // Users
+    'users' => 'Users',
     'role' => [
         'master' => 'Master',
         'admin' => 'Admin',
@@ -25,6 +26,14 @@ return [
         'user' => 'User',
         'banned' => 'Banned'
     ],
-    'users' => 'Users'
+
+    // Languages
+    'language' => 'Language',
+    'language-name' => [
+        'en' => 'English',
+        'ru' => 'Russian',
+        'uk' => 'Ukrainian',
+        'ach' => 'Translate'
+    ]
 
 ];

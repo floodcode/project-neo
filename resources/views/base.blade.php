@@ -85,13 +85,13 @@
                 <div class="col-md text-right">
                     <div class="dropup" id="language-select">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ __('label.language') }}
+                            {{ __('title.language') }}
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             @foreach(\App\Core\Locale::getHostMapping() as $code => $subdomain)
                                 <button class="dropdown-item{{ app()->getLocale() == $code ? ' active' : '' }}" data-subdomain="{{ $subdomain }}">
                                     <span class="lang-flag lang-flag-{{ $subdomain }}"></span>
-                                    {{ __('label.language-name.' . $code) }}
+                                    {{ __('title.language-name.' . $code) }}
                                 </button>
                             @endforeach
                         </div>
