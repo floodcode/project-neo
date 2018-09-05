@@ -89,7 +89,8 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             @foreach(\App\Core\Locale::getHostMapping() as $code => $subdomain)
-                                <button class="dropdown-item{{ app()->getLocale() == $code ? ' active' : '' }}" data-subdomain="{{ $subdomain }}">
+                                <button class="dropdown-item{{ app()->getLocale() == $code ? ' active' : '' }}"
+                                        data-subdomain="{{ $subdomain == \App\Core\Locale::DEFAULT_LOCALE ? '' : $subdomain }}">
                                     <span class="lang-flag lang-flag-{{ $subdomain }}"></span>
                                     {{ __('title.language-name.' . $code) }}
                                 </button>

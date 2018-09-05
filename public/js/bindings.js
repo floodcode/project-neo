@@ -7,7 +7,12 @@ $(function() {
             subdomain = me.data('subdomain');
 
         if (!me.hasClass('active')) {
-            window.location.host = subdomain + '.' + App.host;
+            var prefix = '';
+            if (subdomain.length) {
+                prefix = subdomain + '.';
+            }
+
+            window.location.host = prefix + App.host;
         }
     });
 });
