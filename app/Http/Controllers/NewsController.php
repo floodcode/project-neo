@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Core\Roles;
 use App\Models\Comment;
+use App\Models\NewsL10n;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,8 +25,16 @@ class NewsController extends Controller
 
     public function index()
     {
+        $news = null;
+        $user = Auth::user();
+        if ($user && Auth::user()->hasRole(Roles::ROLE_MODERATOR)) {
+            $news = News::orderBy('created_at', 'desc')->paginate(10);
+        } else {
+            $news = News::translated()->orderBy('created_at', 'desc')->paginate(10);
+        }
+
         return view('news.index', [
-            'news' => News::orderBy('created_at', 'desc')->paginate(10)
+            'news' => $news
         ]);
     }
 
@@ -38,7 +48,9 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         if ($request->method() !== 'POST') {
-            return view('news.create');
+            return view('news.create', [
+                'item' => new News()
+            ]);
         }
 
         $request->flash();
@@ -47,6 +59,7 @@ class NewsController extends Controller
 
         $item = new News();
         $this->prefillNewsPost($item, $data);
+
         $item->save();
 
         return redirect(route('news.view', [$item->id]));
@@ -109,11 +122,11 @@ class NewsController extends Controller
     protected function prefillNewsPost(News &$item, array $data)
     {
         if (array_key_exists('title', $data)) {
-            $item->title = $data['title'];
+            $item->l10n()->title = $data['title'];
         }
 
         if (array_key_exists('message', $data)) {
-            $item->message = $data['message'];
+            $item->l10n()->message = $data['message'];
         }
 
         if (array_key_exists('image', $data)) {

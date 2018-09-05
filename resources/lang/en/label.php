@@ -8,6 +8,7 @@ return [
     'comments:' => 'Comments:',
     'role:' => 'Role:',
     'choose-file' => 'Choose File',
+    'not-translated' => 'Not Translated',
 
     // Auth
     'name' => 'Name',

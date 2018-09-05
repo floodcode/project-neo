@@ -17,7 +17,9 @@
                     <div class="row">
                         <div class="col-md text-center text-md-left">
                             <h3>
-                                <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->title }}</a>
+                                <a href="{{ route('news.view', ['id' => $item->id]) }}">
+                                    {{ $item->l10nRelevant()->title }}
+                                </a>
                             </h3>
                         </div>
                         @if ($item->hasAccess(auth()->user()))
@@ -39,23 +41,26 @@
                             <a href="{{ route('news.view', ['id' => $item->id]) }}">
                                 <img class="news-image float-left"
                                      src="/public/img/news/{{ $item->image }}"
-                                     title="{{ $item->title }}"
-                                     alt="{{ $item->title }}">
+                                     title="{{ $item->l10nRelevant()->title }}"
+                                     alt="{{ $item->l10nRelevant()->title }}">
                             </a>
                         @endif
-                        {!! Str::words($item->message, 150, '') !!}
-                        @if (Str::length($item->message) > 150)
+                        {!! Str::words($item->l10nRelevant()->message, 150, '') !!}
+                        @if (Str::length($item->l10nRelevant()->message) > 150)
                             <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ __('button.read-more') }}</a>
                         @endif
                     </div>
 
-                    <p class="text-muted mb-0">
+                    <p class="text-muted m-0">
                         {{ __('label.author:') }}
                         <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
                         {{ __('label.comments:') }}
                         <a href="{{ route('news.view', ['id' => $item->id]) }}#comments">{{ count($item->comments) }}</a>,
                         {{ __('label.added:') }}
                         {{ $item->created_at->diffForHumans() }}
+                        @if (!$item->isTranslated())
+                            <span class="badge badge-danger">{{ __('label.not-translated') }}</span>
+                        @endif
                     </p>
                 </div>
             </div>

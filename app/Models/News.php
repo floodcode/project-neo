@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Core\Roles;
-use Illuminate\Database\Eloquent\Model;
-
 use App\Models\Traits\HasUser;
+use App\Models\Traits\Localizable;
+use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
+    use Localizable;
     use HasUser;
 
     protected $table = 'news';

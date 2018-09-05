@@ -1,19 +1,19 @@
 @extends('base')
 
-@section('title', $item->title)
+@section('title', $item->l10n()->title)
 
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('button.home') }}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('news') }}">{{ __('button.news') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $item->title }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $item->l10nRelevant()->title }}</li>
         </ol>
     </nav>
 
     <div class="row">
         <div class="col-md text-center text-md-left">
-            <h3>{{ $item->title }}</h3>
+            <h3>{{ $item->l10nRelevant()->title }}</h3>
         </div>
         @if ($item->hasAccess(auth()->user()))
             <div class="col-md-4 text-center text-md-right">
@@ -33,18 +33,21 @@
             <a href="/public/img/news/{{ $item->image }}">
                 <img class="news-image float-left"
                      src="/public/img/news/{{ $item->image }}"
-                     title="{{ $item->title }}"
-                     alt="{{ $item->title }}">
+                     title="{{ $item->l10nRelevant()->title }}"
+                     alt="{{ $item->l10nRelevant()->title }}">
             </a>
         @endif
-        {!! $item->message !!}
+        {!! $item->l10nRelevant()->message !!}
     </div>
 
     <p class="text-muted">
         {{ __('label.author:') }}
         <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
         {{ __('label.added:') }}
-        {{ $item->created_at->diffForHumans() }}
+        {{ $item->l10nRelevant()->created_at->diffForHumans() }}
+        @if (!$item->isTranslated())
+            <span class="badge badge-danger">{{ __('label.not-translated') }}</span>
+        @endif
     </p>
 
     @include('news.components.comments')

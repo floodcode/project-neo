@@ -3,12 +3,12 @@
     <div class="form-group">
         <label for="news-create-title">{{ __('label.title') }}</label>
         <input required class="form-control" id="news-create-title" type="text" name="title"
-               value="{{ old('title', $item->title ?? '') }}">
+               value="{{ old('title', $item->l10n()->title ?? '') }}">
     </div>
     <div class="form-group">
         <label for="news-create-message">{{ __('label.message') }}</label>
         <textarea required class="form-control" id="news-create-message" rows="10" name="message">
-            {{ old('message', $item->message ?? '')  }}
+            {{ old('message', $item->l10n()->message ?? '')  }}
         </textarea>
     </div>
     <div class="form-group">
