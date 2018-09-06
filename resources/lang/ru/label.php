@@ -4,6 +4,7 @@ return [
 
     // Generic
     'author:' => 'Автор:',
+    'category:' => 'Категория:',
     'added:' => 'Добавлено:',
     'comments:' => 'Комментарии:',
     'role:' => 'Роль:',
@@ -18,6 +19,8 @@ return [
     'remember-me' => 'Запомнить меня',
 
     // News
+    'category' => 'Категория',
+    'no-category' => 'Без категории',
     'title' => 'Название',
     'message' => 'Сообщение',
     'post-image' => 'Изображение поста'
