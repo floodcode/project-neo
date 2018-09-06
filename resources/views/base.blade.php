@@ -11,6 +11,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
 
         {!! includeStyle('/css/lib/bootstrap.min.css') !!}
+        {!! includeStyle('/css/lib/bootstrap-select.min.css') !!}
 
         {!! includeStyle('/css/app.css') !!}
 
@@ -104,6 +105,7 @@
         {!! includeScript('/js/lib/jquery.min.js') !!}
         {!! includeScript('/js/lib/popper.min.js') !!}
         {!! includeScript('/js/lib/bootstrap.min.js') !!}
+        {!! includeScript('/js/lib/bootstrap-select.min.js') !!}
         {!! includeScript('/js/lib/moment.min.js') !!}
 
         {!! includeScript('/js/app.js') !!}

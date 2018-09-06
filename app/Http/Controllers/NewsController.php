@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Core\Roles;
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\NewsL10n;
 use Illuminate\Http\JsonResponse;
@@ -49,7 +50,8 @@ class NewsController extends Controller
     {
         if ($request->method() !== 'POST') {
             return view('news.create', [
-                'item' => new News()
+                'item' => new News(),
+                'categories' => Category::all()
             ]);
         }
 
@@ -74,7 +76,8 @@ class NewsController extends Controller
 
         if ($request->method() !== 'POST') {
             return view('news.edit', [
-                'item' => $item
+                'item' => $item,
+                'categories' => Category::all()
             ]);
         }
 
@@ -121,7 +124,8 @@ class NewsController extends Controller
         return [
             'title' => 'required|max:255',
             'message' => 'required',
-            'image' => 'image|mimes:jpeg,png'
+            'image' => 'image|mimes:jpeg,png',
+            'category-id' => 'required'
         ];
     }
 
@@ -154,6 +158,15 @@ class NewsController extends Controller
 
         if (array_key_exists('user-id', $data)) {
             $item->user_id = $data['user-id'];
+        }
+
+        if (array_key_exists('category-id', $data)) {
+            $categoryId = $data['category-id'];
+            if ($categoryId == Category::NO_CATEGORY) {
+                $item->category_id = null;
+            } else {
+                $item->category_id = $data['category-id'];
+            }
         }
     }
 

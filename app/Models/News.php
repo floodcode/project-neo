@@ -19,6 +19,11 @@ class News extends Model
         return Roles::ROLE_ADMIN;
     }
 
+    public function category()
+    {
+        return $this->hasOne('App\Models\Category', 'id', 'category_id');
+    }
+
     public function comments()
     {
         return $this->hasMany('App\Models\Comment');

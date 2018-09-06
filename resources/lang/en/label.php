@@ -4,6 +4,7 @@ return [
 
     // Generic
     'author:' => 'Author:',
+    'category:' => 'Category:',
     'added:' => 'Added:',
     'comments:' => 'Comments:',
     'role:' => 'Role:',
@@ -18,6 +19,8 @@ return [
     'remember-me' => 'Remember Me',
 
     // News
+    'category' => 'Category',
+    'no-category' => 'No Category',
     'title' => 'Title',
     'message' => 'Message',
     'post-image' => 'Post Image'

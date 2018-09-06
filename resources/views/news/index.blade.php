@@ -43,10 +43,18 @@
                     <p class="text-muted m-0">
                         {{ __('label.author:') }}
                         <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
+
+                        @if ($item->category)
+                            {{ __('label.category:') }}
+                            <a href="">{{ $item->category->l10nRelevant()->name }}</a>,
+                        @endif
+
                         {{ __('label.comments:') }}
                         <a href="{{ route('news.view', ['id' => $item->id]) }}#comments">{{ count($item->comments) }}</a>,
+
                         {{ __('label.added:') }}
                         {{ $item->created_at->diffForHumans() }}
+
                         @if (!$item->isTranslated())
                             <span class="badge badge-danger">{{ __('label.not-translated') }}</span>
                         @endif

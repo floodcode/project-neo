@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsL10n extends Model
+class CategoryL10n extends Model
 {
-    protected $table = 'news_l10n';
+    protected $table = 'category_l10n';
 }

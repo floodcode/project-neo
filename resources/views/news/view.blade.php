@@ -32,8 +32,15 @@
     <p class="text-muted">
         {{ __('label.author:') }}
         <a href="{{ route('user.view', ['id' => $item->user->id]) }}">{{ $item->user->name }}</a>,
+
+        @if ($item->category)
+            {{ __('label.category:') }}
+            <a href="">{{ $item->category->l10nRelevant()->name }}</a>,
+        @endif
+
         {{ __('label.added:') }}
         {{ $item->l10nRelevant()->created_at->diffForHumans() }}
+
         @if (!$item->isTranslated())
             <span class="badge badge-danger">{{ __('label.not-translated') }}</span>
         @endif

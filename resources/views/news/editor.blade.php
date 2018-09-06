@@ -1,9 +1,24 @@
 <form method="POST" action="{{ $formAction }}" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
-        <label for="news-create-title">{{ __('label.title') }}</label>
-        <input required class="form-control" id="news-create-title" type="text" name="title"
-               value="{{ old('title', $item->l10nRelevant()->title ?? '') }}">
+        <div class="row">
+            <div class="col-9">
+                <label for="news-create-title">{{ __('label.title') }}</label>
+                <input required class="form-control" id="news-create-title" type="text" name="title"
+                       value="{{ old('title', $item->l10nRelevant()->title ?? '') }}">
+            </div>
+            <div class="col-3">
+                <label for="news-create-category">{{ __('label.category') }}</label>
+                <div>
+                    <select class="selectpicker w-100" data-style="btn-default" id="news-create-category" name="category-id">
+                        <option value="{{ \App\Models\Category::NO_CATEGORY }}">{{ __('label.no-category') }}</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->l10nRelevant()->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="news-create-message">{{ __('label.message') }}</label>
