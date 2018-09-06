@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'Home',
     'news' => 'News',
+    'actions' => 'Actions',
     'create' => 'Create',
     'edit' => 'Edit',
     'translate' => 'Translate',

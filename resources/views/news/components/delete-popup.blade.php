@@ -32,7 +32,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('button.close') }}</button>
-                <button type="button" class="btn btn-danger" id="delete-post-translation-confirm">{{ __('button.delete') }}</button>
+                <button type="button" class="btn btn-danger" id="delete-post-translation-confirm">{{ __('button.delete-translation') }}</button>
             </div>
         </div>
     </div>
