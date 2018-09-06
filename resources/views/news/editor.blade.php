@@ -13,7 +13,11 @@
                     <select class="selectpicker w-100" data-style="btn-default" id="news-create-category" name="category-id">
                         <option value="{{ \App\Models\Category::NO_CATEGORY }}">{{ __('label.no-category') }}</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->l10nRelevant()->name }}</option>
+                            <option
+                                    value="{{ $category->id }}"
+                                    {{ $item->category && $item->category->id == $category->id ? 'selected' : '' }}>
+                                {{ $category->l10nRelevant()->name }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
