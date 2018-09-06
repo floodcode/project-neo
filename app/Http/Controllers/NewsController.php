@@ -101,6 +101,21 @@ class NewsController extends Controller
         return $this->jsonSuccess();
     }
 
+    public function deleteTranslation($id): JsonResponse
+    {
+        $item = News::findOrFail($id);
+        if (!$item->hasAccess(Auth::user())) {
+            return $this->jsonError(__('message.error.not-authorized'));
+        }
+
+        if ($item->isTranslated() && count($item->translations) <= 1) {
+            return $this->jsonError(__('message.error.delete-only-translation'));
+        }
+
+        $item->l10n()->delete();
+        return $this->jsonSuccess();
+    }
+
     protected function newsRules(): array
     {
         return [

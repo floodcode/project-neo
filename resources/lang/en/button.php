@@ -7,7 +7,9 @@ return [
     'news' => 'News',
     'create' => 'Create',
     'edit' => 'Edit',
+    'translate' => 'Translate',
     'delete' => 'Delete',
+    'delete-translation' => 'Delete Translation',
     'cancel' => 'Cancel',
     'close' => 'Close',
 
@@ -22,6 +24,7 @@ return [
     // News
     'add-post' => 'Add New Post',
     'edit-post' => 'Edit Post',
+    'translate-post' => 'Translate Post',
     'delete-post' => 'Delete Post',
     'read-more' => 'Read More',
     'add-comment' => 'Add Comment',

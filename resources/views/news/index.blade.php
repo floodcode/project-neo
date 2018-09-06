@@ -26,8 +26,13 @@
                         <div class="col-md-4 text-center text-md-right">
                             <div class="mb-2">
                                 <a class="btn btn-sm btn-primary" href="{{ route('news.edit', ['id' => $item->id]) }}">
-                                    {{ __('button.edit') }}
+                                    {{ $item->isTranslated() ? __('button.edit') : __('button.translate')}}
                                 </a>
+                                @if ($item->isTranslated() && count($item->translations) > 1)
+                                    <button class="btn btn-sm btn-danger delete-post-translation" data-id="{{ $item->id }}">
+                                        {{ __('button.delete-translation') }}
+                                    </button>
+                                @endif
                                 <button class="btn btn-sm btn-danger delete-post" data-id="{{ $item->id }}">
                                     {{ __('button.delete') }}
                                 </button>

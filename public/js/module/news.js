@@ -18,6 +18,22 @@ $(function() {
         });
     });
 
+    $('.delete-post-translation').on('click', function() {
+        $('#delete-news-translation-modal').modal('show');
+        $('#delete-post-translation-confirm').data('id', $(this).data('id'));
+    });
+
+    $('#delete-post-translation-confirm').on('click', function() {
+        var me = $(this),
+            id = me.data('id');
+
+        App.sendRequest('/news/delete-translation/' + id, null, function (data) {
+            if (data.success) {
+                window.location.reload();
+            }
+        });
+    });
+
     $('#comment-create').on('click', function() {
         var me = $(this),
             id = me.data('id'),
