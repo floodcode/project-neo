@@ -2,21 +2,13 @@
 
 return [
 
-    'language' => 'Language',
-
-    'language-name' => [
-        'en' => 'English',
-        'ru' => 'Russian',
-        'uk' => 'Ukrainian',
-        'ach' => 'Перекласти'
-    ],
-
     // Generic
     'author:' => 'Автор:',
     'added:' => 'Додано:',
     'comments:' => 'Коментарі:',
     'role:' => 'Роль:',
     'choose-file' => 'Вибрати Файл',
+    'not-translated' => 'Не перекладено',
 
     // Auth
     'name' => 'Ім\'я',
