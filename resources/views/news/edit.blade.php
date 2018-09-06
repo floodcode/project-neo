@@ -1,4 +1,4 @@
-@extends('base')
+@extends('default')
 
 @section('title', $item->isTranslated() ? __('title.edit-post') : __('title.translate-post') )
 

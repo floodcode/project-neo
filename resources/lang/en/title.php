@@ -36,6 +36,11 @@ return [
         'ru' => 'Russian',
         'uk' => 'Ukrainian',
         'ach' => 'Translate'
-    ]
+    ],
+
+    // Admin
+    'create-category' => 'Create Category',
+    'edit-category' => 'Edit Category',
+    'delete-category' => 'Delete Category'
 
 ];

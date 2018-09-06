@@ -1,4 +1,4 @@
-@extends('base')
+@extends('default')
 
 @section('title', __('title.users'))
 

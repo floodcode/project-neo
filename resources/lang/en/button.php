@@ -4,8 +4,11 @@ return [
 
     // Generic
     'home' => 'Home',
+    'admin' => 'Admin',
+    'admin-panel' => 'Admin Panel',
     'news' => 'News',
     'actions' => 'Actions',
+    'categories' => 'Categories',
     'create' => 'Create',
     'edit' => 'Edit',
     'translate' => 'Translate',
@@ -33,6 +36,9 @@ return [
     'edit-comment' => 'Edit',
 
     // Users
-    'users' => 'Users'
+    'users' => 'Users',
+
+    // Admin
+    'add-category' => 'Add New Category'
 
 ];

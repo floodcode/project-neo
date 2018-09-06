@@ -1,7 +1,6 @@
 'use strict';
 
 $(function() {
-    // Post actions
     $('.delete-post').on('click', function() {
         $('#delete-news-modal').modal('show');
         $('#delete-post-confirm').data('id', $(this).data('id'));

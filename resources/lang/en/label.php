@@ -10,9 +10,12 @@ return [
     'role:' => 'Role:',
     'choose-file' => 'Choose File',
     'not-translated' => 'Not Translated',
+    'name' => 'Name',
+    'slug' => 'Slug',
+    'actions' => 'Actions',
+    'id' => 'ID',
 
     // Auth
-    'name' => 'Name',
     'email-address' => 'E-Mail Address',
     'password' => 'Password',
     'confirm-password' => 'Confirm Password',
@@ -23,6 +26,9 @@ return [
     'no-category' => 'No Category',
     'title' => 'Title',
     'message' => 'Message',
-    'post-image' => 'Post Image'
+    'post-image' => 'Post Image',
+
+    // Admin
+    'admin-panel' => 'Admin Panel',
 
 ];

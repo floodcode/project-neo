@@ -13,18 +13,20 @@ trait Localizable
     protected $l10nRelevant = null;
     protected $locale = null;
 
-    public function l10n(): Model
+    public function l10n(?string $locale = null): Model
     {
+        $locale = $locale ?? $this->getLocale();
+
         $this->fetchTranslations();
-        if (array_key_exists($this->getLocale(), $this->l10nData)) {
-            return $this->l10nData[$this->getLocale()];
+        if (array_key_exists($locale, $this->l10nData)) {
+            return $this->l10nData[$locale];
         }
 
         $l10nModelName = $this->l10nModelName();
         $l10nModel = new $l10nModelName();
-        $l10nModel->locale = $this->getLocale();
+        $l10nModel->locale = $locale;
 
-        $this->l10nData[$this->getLocale()] = $l10nModel;
+        $this->l10nData[$locale] = $l10nModel;
 
         return $l10nModel;
     }
