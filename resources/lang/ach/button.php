@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'crwdns94946:0crwdne94946:0',
     'news' => 'crwdns94947:0crwdne94947:0',
+    'actions' => 'crwdns95116:0crwdne95116:0',
     'create' => 'crwdns94948:0crwdne94948:0',
     'edit' => 'crwdns94949:0crwdne94949:0',
     'translate' => 'crwdns95109:0crwdne95109:0',
