@@ -27,6 +27,9 @@
 
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">{{ __('button.home-page') }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">{{ __('button.logout') }}</a>
                     </li>
                 </ul>

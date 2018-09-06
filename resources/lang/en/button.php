@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'Home',
     'admin-panel' => 'Admin Panel',
+    'home-page' => 'Home Page',
     'news' => 'News',
     'actions' => 'Actions',
     'categories' => 'Categories',
