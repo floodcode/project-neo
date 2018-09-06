@@ -36,6 +36,11 @@ return [
         'ru' => 'Russian',
         'uk' => 'Ukrainian',
         'ach' => 'Перевести'
-    ]
+    ],
+
+    // Admin
+    'create-category' => 'Создать категорию',
+    'edit-category' => 'Редактирование категории',
+    'delete-category' => 'Удаление категории'
 
 ];

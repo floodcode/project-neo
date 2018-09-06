@@ -36,6 +36,11 @@ return [
         'ru' => 'crwdns95105:0crwdne95105:0',
         'uk' => 'crwdns95106:0crwdne95106:0',
         'ach' => 'crwdns95107:0crwdne95107:0'
-    ]
+    ],
+
+    // Admin
+    'create-category' => 'crwdns95128:0crwdne95128:0',
+    'edit-category' => 'crwdns95129:0crwdne95129:0',
+    'delete-category' => 'crwdns95130:0crwdne95130:0'
 
 ];
