@@ -7,7 +7,9 @@ return [
     'news' => 'Новости',
     'create' => 'Создать',
     'edit' => 'Редактировать',
+    'translate' => 'Перевести',
     'delete' => 'Удалить',
+    'delete-translation' => 'Удалить перевод',
     'cancel' => 'Отменить',
     'close' => 'Закрыть',
 
@@ -22,6 +24,7 @@ return [
     // News
     'add-post' => 'Добавить новость',
     'edit-post' => 'Редактировать пост',
+    'translate-post' => 'Перевести пост',
     'delete-post' => 'Удалить пост',
     'read-more' => 'Подробнее',
     'add-comment' => 'Добавить комментарий',

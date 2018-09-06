@@ -11,7 +11,9 @@ return [
     'news' => 'Новости',
     'add-post' => 'Добавить новость',
     'edit-post' => 'Редактировать пост',
+    'translate-post' => 'Перевести пост',
     'delete-post' => 'Удалить пост',
+    'delete-post-translation' => 'Удалить перевод поста',
     'add-comment' => 'Добавить комментарий',
     'delete-comment' => 'Удалить комментарий',
     'comments' => 'Комментарии',
@@ -33,7 +35,7 @@ return [
         'en' => 'English',
         'ru' => 'Russian',
         'uk' => 'Ukrainian',
-        'ach' => 'Translate'
+        'ach' => 'Перевести'
     ]
 
 ];
