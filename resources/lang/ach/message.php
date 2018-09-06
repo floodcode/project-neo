@@ -7,6 +7,7 @@ return [
 
     // News
     'delete-this-item?' => 'crwdns94983:0crwdne94983:0',
+    'delete-this-translation?' => 'crwdns95112:0crwdne95112:0',
     'no-comments' => 'crwdns94993:0crwdne94993:0',
     'comments-guest-message' => 'crwdns94994:0%scrwdne94994:0',
 
@@ -20,7 +21,8 @@ return [
 
     // Errors
     'error' => [
-        'not-authorized' => 'crwdns94978:0crwdne94978:0'
+        'not-authorized' => 'crwdns94978:0crwdne94978:0',
+        'delete-only-translation' => 'crwdns95113:0crwdne95113:0'
     ]
 
 ];

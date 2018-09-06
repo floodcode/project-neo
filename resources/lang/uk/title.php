@@ -11,7 +11,9 @@ return [
     'news' => 'Новини',
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати новину',
+    'translate-post' => 'Перекласти пост',
     'delete-post' => 'Видалити пост',
+    'delete-post-translation' => 'Видалити переклад поста',
     'add-comment' => 'Додати коментар',
     'delete-comment' => 'Видалити коментар',
     'comments' => 'Коментарі',
@@ -33,7 +35,7 @@ return [
         'en' => 'English',
         'ru' => 'Russian',
         'uk' => 'Ukrainian',
-        'ach' => 'Translate'
+        'ach' => 'Перекласти'
     ]
 
 ];
