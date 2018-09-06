@@ -74,7 +74,7 @@
         @endrole
     @endif
 
-    @include('news.components.delete-popup')
+    @include('news.components.post-actions-popup')
 @endsection
 
 @section('scripts')
