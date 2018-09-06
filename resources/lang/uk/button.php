@@ -4,8 +4,10 @@ return [
 
     // Generic
     'home' => 'Головна',
+    'admin-panel' => 'Панель адміністратора',
     'news' => 'Новини',
     'actions' => 'Дії',
+    'categories' => 'Категорії',
     'create' => 'Створити',
     'edit' => 'Редагувати',
     'translate' => 'Перекласти',
@@ -33,6 +35,9 @@ return [
     'edit-comment' => 'Редагувати',
 
     // Users
-    'users' => 'Користувачі'
+    'users' => 'Користувачі',
+
+    // Admin
+    'add-category' => 'Додати нову категорію'
 
 ];

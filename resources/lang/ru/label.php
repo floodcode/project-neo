@@ -10,9 +10,12 @@ return [
     'role:' => 'Роль:',
     'choose-file' => 'Выбрать файл',
     'not-translated' => 'Не переведено',
+    'name' => 'Имя',
+    'url' => 'URL',
+    'actions' => 'Действия',
+    'id' => 'ID',
 
     // Auth
-    'name' => 'Имя',
     'email-address' => 'E-mail адрес',
     'password' => 'Пароль',
     'confirm-password' => 'Подтверждение пароля',
@@ -23,6 +26,9 @@ return [
     'no-category' => 'Без категории',
     'title' => 'Название',
     'message' => 'Сообщение',
-    'post-image' => 'Изображение поста'
+    'post-image' => 'Изображение поста',
+
+    // Admin
+    'admin-panel' => 'Панель администратора',
 
 ];

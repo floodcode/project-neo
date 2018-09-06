@@ -4,8 +4,10 @@ return [
 
     // Generic
     'home' => 'crwdns94946:0crwdne94946:0',
+    'admin-panel' => 'crwdns95121:0crwdne95121:0',
     'news' => 'crwdns94947:0crwdne94947:0',
     'actions' => 'crwdns95116:0crwdne95116:0',
+    'categories' => 'crwdns95122:0crwdne95122:0',
     'create' => 'crwdns94948:0crwdne94948:0',
     'edit' => 'crwdns94949:0crwdne94949:0',
     'translate' => 'crwdns95109:0crwdne95109:0',
@@ -33,6 +35,9 @@ return [
     'edit-comment' => 'crwdns94990:0crwdne94990:0',
 
     // Users
-    'users' => 'crwdns95083:0crwdne95083:0'
+    'users' => 'crwdns95083:0crwdne95083:0',
+
+    // Admin
+    'add-category' => 'crwdns95123:0crwdne95123:0'
 
 ];
