@@ -1,6 +1,7 @@
 /**
  * News
  */
+
 div.paginator ul.pagination {
     width: fit-content;
     margin: 0 auto;
@@ -11,6 +12,10 @@ img.news-image {
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+}
+
+.news-content p {
+    margin: 0.5em;
 }
 
 /**

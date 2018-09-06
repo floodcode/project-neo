@@ -26,7 +26,9 @@
                      alt="{{ $item->l10nRelevant()->title }}">
             </a>
         @endif
-        {!! $item->l10nRelevant()->message !!}
+        <div class="news-content">
+            {!! $item->l10nRelevant()->message !!}
+        </div>
     </div>
 
     <p class="text-muted">

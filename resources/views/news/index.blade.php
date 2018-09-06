@@ -34,10 +34,12 @@
                                      alt="{{ $item->l10nRelevant()->title }}">
                             </a>
                         @endif
-                        {!! Str::words($item->l10nRelevant()->message, 150, '') !!}
-                        @if (Str::length($item->l10nRelevant()->message) > 150)
-                            <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ __('button.read-more') }}</a>
-                        @endif
+                        <div class="news-content">
+                            {!! Str::words($item->l10nRelevant()->message, 150, '') !!}
+                            @if (Str::length($item->l10nRelevant()->message) > 150)
+                                <a href="{{ route('news.view', ['id' => $item->id]) }}">{{ __('button.read-more') }}</a>
+                            @endif
+                        </div>
                     </div>
 
                     <p class="text-muted m-0">
