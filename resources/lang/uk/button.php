@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'Головна',
     'news' => 'Новини',
+    'actions' => 'Дії',
     'create' => 'Створити',
     'edit' => 'Редагувати',
     'translate' => 'Перекласти',
@@ -24,7 +25,7 @@ return [
     // News
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати пост',
-    'translate-post' => 'Видалити пост',
+    'translate-post' => 'Перекласти пост',
     'delete-post' => 'Видалити пост',
     'read-more' => 'Читати далі',
     'add-comment' => 'Додати коментар',
