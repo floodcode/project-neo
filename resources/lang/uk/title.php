@@ -17,6 +17,7 @@ return [
     'comments' => 'Коментарі',
 
     // Users
+    'users' => 'Користувачі',
     'role' => [
         'master' => 'Головний Адміністратор',
         'admin' => 'Адміністратор',
@@ -25,6 +26,14 @@ return [
         'user' => 'Користувач',
         'banned' => 'Заблокований'
     ],
-    'users' => 'Користувачі'
+
+    // Languages
+    'language' => 'Language',
+    'language-name' => [
+        'en' => 'English',
+        'ru' => 'Russian',
+        'uk' => 'Ukrainian',
+        'ach' => 'Translate'
+    ]
 
 ];

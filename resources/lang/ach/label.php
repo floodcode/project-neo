@@ -2,21 +2,13 @@
 
 return [
 
-    'language' => 'crwdns95098:0crwdne95098:0',
-
-    'language-name' => [
-        'en' => 'crwdns95099:0crwdne95099:0',
-        'ru' => 'crwdns95100:0crwdne95100:0',
-        'uk' => 'crwdns95101:0crwdne95101:0',
-        'ach' => 'crwdns95102:0crwdne95102:0'
-    ],
-
     // Generic
     'author:' => 'crwdns94991:0crwdne94991:0',
     'added:' => 'crwdns94992:0crwdne94992:0',
     'comments:' => 'crwdns95084:0crwdne95084:0',
     'role:' => 'crwdns95085:0crwdne95085:0',
     'choose-file' => 'crwdns94986:0crwdne94986:0',
+    'not-translated' => 'crwdns95108:0crwdne95108:0',
 
     // Auth
     'name' => 'crwdns94959:0crwdne94959:0',

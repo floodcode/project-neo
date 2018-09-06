@@ -17,6 +17,7 @@ return [
     'comments' => 'crwdns94998:0crwdne94998:0',
 
     // Users
+    'users' => 'crwdns95093:0crwdne95093:0',
     'role' => [
         'master' => 'crwdns95086:0crwdne95086:0',
         'admin' => 'crwdns95087:0crwdne95087:0',
@@ -25,6 +26,14 @@ return [
         'user' => 'crwdns95090:0crwdne95090:0',
         'banned' => 'crwdns95091:0crwdne95091:0'
     ],
-    'users' => 'crwdns95093:0crwdne95093:0'
+
+    // Languages
+    'language' => 'crwdns95103:0crwdne95103:0',
+    'language-name' => [
+        'en' => 'crwdns95104:0crwdne95104:0',
+        'ru' => 'crwdns95105:0crwdne95105:0',
+        'uk' => 'crwdns95106:0crwdne95106:0',
+        'ach' => 'crwdns95107:0crwdne95107:0'
+    ]
 
 ];
