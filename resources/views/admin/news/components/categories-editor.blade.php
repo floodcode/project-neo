@@ -13,7 +13,7 @@
                     <input required class="form-control" type="text" name="name">
                 </div>
                 <div class="form-group">
-                    <label for="news-create-slug">{{ __('label.slug') }}</label>
+                    <label for="news-create-slug">{{ __('label.url') }}</label>
                     <input required class="form-control" type="text" name="slug">
                 </div>
             </div>

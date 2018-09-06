@@ -17,7 +17,7 @@
             <tr>
                 <th style="width: 1px;">{{ __('label.id') }}</th>
                 <th>{{ __('label.name') }}</th>
-                <th>{{ __('label.slug') }}</th>
+                <th>{{ __('label.url') }}</th>
                 <th class="text-right">{{ __('label.actions') }}</th>
             </tr>
             </thead>

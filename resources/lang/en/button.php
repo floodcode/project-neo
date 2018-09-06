@@ -4,7 +4,6 @@ return [
 
     // Generic
     'home' => 'Home',
-    'admin' => 'Admin',
     'admin-panel' => 'Admin Panel',
     'news' => 'News',
     'actions' => 'Actions',

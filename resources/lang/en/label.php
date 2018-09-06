@@ -11,7 +11,7 @@ return [
     'choose-file' => 'Choose File',
     'not-translated' => 'Not Translated',
     'name' => 'Name',
-    'slug' => 'Slug',
+    'url' => 'URL',
     'actions' => 'Actions',
     'id' => 'ID',
 

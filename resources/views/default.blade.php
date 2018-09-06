@@ -26,7 +26,7 @@
                 <ul class="navbar-nav navbar-right">
                     @role('admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin') }}">{{ __('button.admin') }}</a>
+                            <a class="nav-link" href="{{ route('admin') }}">{{ __('button.admin-panel') }}</a>
                         </li>
                     @endrole
                     @guest
