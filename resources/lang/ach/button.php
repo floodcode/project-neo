@@ -26,6 +26,7 @@ return [
     'send-password-reset-link' => 'crwdns94956:0crwdne94956:0',
 
     // News
+    'all-news' => 'crwdns95133:0crwdne95133:0',
     'add-post' => 'crwdns94957:0crwdne94957:0',
     'edit-post' => 'crwdns94981:0crwdne94981:0',
     'translate-post' => 'crwdns95111:0crwdne95111:0',
