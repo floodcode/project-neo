@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'crwdns94946:0crwdne94946:0',
     'admin-panel' => 'crwdns95121:0crwdne95121:0',
+    'home-page' => 'crwdns95132:0crwdne95132:0',
     'news' => 'crwdns94947:0crwdne94947:0',
     'actions' => 'crwdns95116:0crwdne95116:0',
     'categories' => 'crwdns95122:0crwdne95122:0',

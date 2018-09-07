@@ -5,6 +5,7 @@ return [
     // Generic
     'home' => 'Главная',
     'admin-panel' => 'Панель администратора',
+    'home-page' => 'Домашняя страница',
     'news' => 'Новости',
     'actions' => 'Действия',
     'categories' => 'Категории',
