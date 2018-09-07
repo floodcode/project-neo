@@ -4,6 +4,7 @@ return [
 
     // Generic messages
     'nothing-to-show' => 'Пусто',
+    'l-not-translated' => 'не перекладено',
 
     // News
     'delete-this-item?' => 'Ви дійсно бажаєте видалити цей елемент?',
