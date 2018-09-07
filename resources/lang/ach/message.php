@@ -4,6 +4,7 @@ return [
 
     // Generic messages
     'nothing-to-show' => 'crwdns94966:0crwdne94966:0',
+    'l-not-translated' => 'crwdns95134:0crwdne95134:0',
 
     // News
     'delete-this-item?' => 'crwdns94983:0crwdne94983:0',

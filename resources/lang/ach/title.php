@@ -2,6 +2,10 @@
 
 return [
 
+    // Generic
+    'home-page' => 'crwdns95135:0crwdne95135:0',
+    'admin-panel' => 'crwdns95136:0crwdne95136:0',
+
     // Auth
     'register' => 'crwdns94967:0crwdne94967:0',
     'login' => 'crwdns94968:0crwdne94968:0',

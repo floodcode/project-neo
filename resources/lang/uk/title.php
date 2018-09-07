@@ -2,6 +2,10 @@
 
 return [
 
+    // Generic
+    'home-page' => 'Домашня сторінка',
+    'admin-panel' => 'Панель адміністратора',
+
     // Auth
     'register' => 'Реєстрація',
     'login' => 'Увійти',
