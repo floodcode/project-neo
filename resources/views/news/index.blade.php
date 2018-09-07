@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', __('title.news'))
+@section('title', $category ? $category->l10nRelevant()->name : __('title.news'))
 
 @section('content')
     <nav aria-label="breadcrumb">

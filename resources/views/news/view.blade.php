@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', $item->l10n()->title)
+@section('title', $item->l10nRelevant()->title)
 
 @section('content')
     <nav aria-label="breadcrumb">

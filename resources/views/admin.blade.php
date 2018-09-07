@@ -1,5 +1,7 @@
 @extends('main')
 
+@section('title', __('title.admin-panel'))
+
 @section('main-navbar')
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">

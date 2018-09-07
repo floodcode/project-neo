@@ -1,9 +1,9 @@
 @extends('main')
 
-@section('title', 'Home page')
+@section('title', __('title.home-page'))
 
 @section('content')
     <div class="text-center">
-        <h3>{{ __('button.home-page') }}</h3>
+        <h3>{{ __('title.home-page') }}</h3>
     </div>
 @endsection

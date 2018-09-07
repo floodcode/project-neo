@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Login')
+@section('title', __('title.login'))
 
 @section('content')
 <div class="container">

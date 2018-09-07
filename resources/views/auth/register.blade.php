@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'Register')
+@section('title', __('title.register'))
 
 @section('head-scripts')
     {!! includeExternalScript('https://www.google.com/recaptcha/api.js') !!}

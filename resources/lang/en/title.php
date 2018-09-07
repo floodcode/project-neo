@@ -2,6 +2,10 @@
 
 return [
 
+    // Generic
+    'home-page' => 'Home Page',
+    'admin-panel' => 'Admin Panel',
+
     // Auth
     'register' => 'Register',
     'login' => 'Login',

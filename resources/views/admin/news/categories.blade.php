@@ -1,7 +1,5 @@
 @extends('admin')
 
-@section('title', __('title.users'))
-
 @section('content')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
