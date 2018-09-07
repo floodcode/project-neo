@@ -25,7 +25,7 @@
             @foreach ($categories as $category)
                 <tr>
                     <td>{{ $category->id }}</td>
-                    <td>{{ $category->l10nRelevant()->name }}</td>
+                    <td>{{ $category->l10nRelevant()->name }}{{ !$category->isTranslated() ? ' (' . __('message.l-not-translated') . ')' : '' }}</td>
                     <td>{{ $category->slug }}</td>
                     <td class="text-right p-2">
                         <button type="button"

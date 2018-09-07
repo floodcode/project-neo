@@ -4,6 +4,7 @@ return [
 
     // Generic messages
     'nothing-to-show' => 'Nothing to show',
+    'l-not-translated' => 'not translated',
 
     // News
     'delete-this-item?' => 'Are you sure you want to delete this item?',
