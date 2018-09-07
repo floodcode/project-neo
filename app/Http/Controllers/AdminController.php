@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Base\Controller;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function renderData(): array
+    {
+        return [];
+    }
+
     public function __construct()
     {
         $this->middleware('role:admin');
@@ -15,12 +21,12 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.index');
+        return $this->render('admin.index');
     }
 
     public function newsCategories()
     {
-        return view('admin.news.categories', [
+        return $this->render('admin.news.categories', [
             'categories' => Category::all()
         ]);
     }

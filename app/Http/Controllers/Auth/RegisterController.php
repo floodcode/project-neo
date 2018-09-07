@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Auth\Traits\RegistersUsers;
 use App\Models\User;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Base\MainController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
+class RegisterController extends MainController
 {
     /*
     |--------------------------------------------------------------------------

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Base\MainController;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController extends MainController
 {
     public function index()
     {
-        return view('home.index');
+        return $this->render('home.index');
     }
 }

@@ -18,8 +18,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">{{ __('button.home') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('news') }}">{{ __('button.news') }}</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ route('news') }}" id="navbar-news" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ __('button.news') }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbar-news">
+                            <a class="dropdown-item" href="{{ route('news') }}">{{ __('button.all-news') }}</a>
+                            @foreach ($envCategories ?? [] as $category)
+                                <a class="dropdown-item" href="{{ route('news.category', ['slug' => $category->slug]) }}">{{ $category->l10nRelevant()->name }}</a>
+                            @endforeach
+                        </div>
                     </li>
                 </ul>
 

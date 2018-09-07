@@ -7,6 +7,9 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('button.home') }}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('news') }}">{{ __('button.news') }}</a></li>
+            @if ($item->category)
+                <li class="breadcrumb-item"><a href="{{ route('news.category', ['slug' => $item->category->slug]) }}">{{ $item->category->l10nRelevant()->name }}</a></li>
+            @endif
             <li class="breadcrumb-item"><a href="{{ route('news.view', ['id' => $item->id]) }}">{{ $item->l10nRelevant()->title }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $item->isTranslated() ? __('button.edit') : __('button.translate') }}</li>
         </ol>

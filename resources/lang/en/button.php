@@ -26,6 +26,7 @@ return [
     'send-password-reset-link' => 'Send Password Reset Link',
 
     // News
+    'all-news' => 'All News',
     'add-post' => 'Add New Post',
     'edit-post' => 'Edit Post',
     'translate-post' => 'Translate Post',

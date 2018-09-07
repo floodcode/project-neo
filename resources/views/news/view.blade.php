@@ -7,6 +7,9 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('button.home') }}</a></li>
             <li class="breadcrumb-item"><a href="{{ route('news') }}">{{ __('button.news') }}</a></li>
+            @if ($item->category)
+                <li class="breadcrumb-item"><a href="{{ route('news.category', ['slug' => $item->category->slug]) }}">{{ $item->category->l10nRelevant()->name }}</a></li>
+            @endif
             <li class="breadcrumb-item active" aria-current="page">{{ $item->l10nRelevant()->title }}</li>
         </ol>
     </nav>
@@ -37,7 +40,7 @@
 
         @if ($item->category)
             {{ __('label.category:') }}
-            <a href="">{{ $item->category->l10nRelevant()->name }}</a>,
+            <a href="{{ route('news.category', ['slug' => $item->category->slug]) }}">{{ $item->category->l10nRelevant()->name }}</a>,
         @endif
 
         {{ __('label.added:') }}

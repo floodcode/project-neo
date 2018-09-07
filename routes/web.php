@@ -42,6 +42,7 @@ Route::post('/news/delete/{id}', 'NewsController@delete');
 Route::post('/news/delete-translation/{id}', 'NewsController@deleteTranslation');
 Route::post('/news/comment/create/{id}', 'NewsController@commentCreate')->name('news.comment.create');
 Route::post('/news/comment/delete/{id}', 'NewsController@commentDelete')->name('news.comment.delete');
+Route::get('/news/{slug}', 'NewsController@category')->name('news.category');
 
 /**
  * User routes

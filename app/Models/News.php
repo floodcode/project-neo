@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Core\Roles;
 use App\Models\Traits\HasUser;
 use App\Models\Traits\Localizable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
@@ -27,5 +28,10 @@ class News extends Model
     public function comments()
     {
         return $this->hasMany('App\Models\Comment');
+    }
+
+    public function scopeByCategory(Builder $query, $categoryId): Builder
+    {
+        return $query->where('category_id', '=', $categoryId);
     }
 }

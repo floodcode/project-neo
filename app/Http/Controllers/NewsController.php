@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Base\MainController;
 use App\Core\Roles;
 use App\Models\Category;
 use App\Models\Comment;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 
-class NewsController extends Controller
+class NewsController extends MainController
 {
     const IMAGES_PATH = 'img/news/';
 
@@ -27,21 +28,41 @@ class NewsController extends Controller
     public function index()
     {
         $news = null;
-        $user = Auth::user();
-        if ($user && Auth::user()->hasRole(Roles::ROLE_MODERATOR)) {
+        if (Auth::user() && Auth::user()->hasRole(Roles::ROLE_MODERATOR)) {
             $news = News::orderBy('created_at', 'desc')->paginate(10);
         } else {
             $news = News::translated()->orderBy('created_at', 'desc')->paginate(10);
         }
 
-        return view('news.index', [
-            'news' => $news
+        return $this->render('news.index', [
+            'news' => $news,
+            'category' => null
+        ]);
+    }
+
+    public function category(string $slug)
+    {
+        $category = Category::where('slug', $slug)->first();
+        if (!$category) {
+            abort(404);
+        }
+
+        $news = null;
+        if (Auth::user() && Auth::user()->hasRole(Roles::ROLE_MODERATOR)) {
+            $news = News::byCategory($category->id)->orderBy('created_at', 'desc')->paginate(10);
+        } else {
+            $news = News::byCategory($category->id)->translated()->orderBy('created_at', 'desc')->paginate(10);
+        }
+
+        return $this->render('news.index', [
+            'news' => $news,
+            'category' => $category
         ]);
     }
 
     public function view($id)
     {
-        return view('news.view', [
+        return $this->render('news.view', [
             'item' => News::findOrFail($id)
         ]);
     }
@@ -49,7 +70,7 @@ class NewsController extends Controller
     public function create(Request $request)
     {
         if ($request->method() !== 'POST') {
-            return view('news.create', [
+            return $this->render('news.create', [
                 'item' => new News(),
                 'categories' => Category::all()
             ]);
@@ -75,7 +96,7 @@ class NewsController extends Controller
         }
 
         if ($request->method() !== 'POST') {
-            return view('news.edit', [
+            return $this->render('news.edit', [
                 'item' => $item,
                 'categories' => Category::all()
             ]);
