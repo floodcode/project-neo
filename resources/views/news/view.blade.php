@@ -14,12 +14,15 @@
         </ol>
     </nav>
 
-    <div class="row">
-        <div class="col-md text-center text-md-left">
-            <h3>{{ $item->l10nRelevant()->title }}</h3>
+    <div class="clearfix">
+        <div class="float-right">
+            @include('news.components.post-actions')
         </div>
-        @include('news.components.post-actions')
+        <h3>
+            {{ $item->l10nRelevant()->title }}
+        </h3>
     </div>
+
     <div class="clearfix">
         @if ($item->image)
             <a href="/public/img/news/{{ $item->image }}">

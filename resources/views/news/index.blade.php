@@ -19,15 +19,15 @@
         @foreach ($news as $item)
             <div class="card mb-3">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md text-center text-md-left">
-                            <h3>
-                                <a href="{{ route('news.view', ['id' => $item->id]) }}">
-                                    {{ $item->l10nRelevant()->title }}
-                                </a>
-                            </h3>
+                    <div class="clearfix">
+                        <div class="float-right">
+                            @include('news.components.post-actions')
                         </div>
-                        @include('news.components.post-actions')
+                        <h3>
+                            <a href="{{ route('news.view', ['id' => $item->id]) }}">
+                                {{ $item->l10nRelevant()->title }}
+                            </a>
+                        </h3>
                     </div>
 
                     <div class="card-text clearfix">
