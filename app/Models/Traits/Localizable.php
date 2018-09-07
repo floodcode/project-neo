@@ -13,6 +13,12 @@ trait Localizable
     protected $l10nRelevant = null;
     protected $locale = null;
 
+    protected $localeFallbackMapping = [
+        'en' => 'ru',
+        'ru' => 'uk',
+        'uk' => 'ru'
+    ];
+
     public function l10n(?string $locale = null): Model
     {
         $locale = $locale ?? $this->getLocale();
@@ -42,8 +48,14 @@ trait Localizable
             return $l10nModel;
         }
 
+        $fallbackLocale = $this->localeFallbackMapping[$l10nModel->locale] ?? $l10nModel->locale;
         $relevantModel = null;
         foreach ($this->l10nData as $item) {
+            if ($item->locale == $fallbackLocale) {
+                $relevantModel = $item;
+                break;
+            }
+
             if ($item->created_at) {
                 if ($relevantModel) {
                     if ($item->created_at->lt($relevantModel)) {
