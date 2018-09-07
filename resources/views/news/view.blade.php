@@ -1,4 +1,4 @@
-@extends('default')
+@extends('main')
 
 @section('title', $item->l10n()->title)
 

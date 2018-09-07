@@ -1,4 +1,4 @@
-@extends('default')
+@extends('main')
 
 @section('title', __('Reset Password'))
 

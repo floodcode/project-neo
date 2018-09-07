@@ -1,4 +1,4 @@
-@extends('default')
+@extends('main')
 
 @section('title', __('title.add-post'))
 
@@ -13,7 +13,7 @@
 
     <h3>{{ __('title.add-post') }}</h3>
 
-    @include('news.editor', [
+    @include('news.components.editor', [
         'formAction' => route('news.create'),
         'cancelRoute' => route('news'),
         'submitButtonText' => __('button.add-post')

@@ -1,4 +1,4 @@
-@extends('default')
+@extends('main')
 
 @section('title', $item->isTranslated() ? __('title.edit-post') : __('title.translate-post') )
 
@@ -17,7 +17,7 @@
 
     <h3>{{ $item->isTranslated() ? __('title.edit-post') : __('title.translate-post') }}</h3>
 
-    @include('news.editor', [
+    @include('news.components.editor', [
         'formAction' => route('news.edit', ['id' => $item->id]),
         'cancelRoute' => route('news.view', ['id' => $item->id]),
         'submitButtonText' => $item->isTranslated() ? __('button.edit-post') : __('button.translate-post')
