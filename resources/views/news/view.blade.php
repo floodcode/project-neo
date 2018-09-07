@@ -25,12 +25,14 @@
 
     <div class="clearfix">
         @if ($item->image)
-            <a href="/public/img/news/{{ $item->image }}">
-                <img class="news-image float-left"
-                     src="/public/img/news/{{ $item->image }}"
-                     title="{{ $item->l10nRelevant()->title }}"
-                     alt="{{ $item->l10nRelevant()->title }}">
-            </a>
+            <div class="text-center">
+                <a href="/public/img/news/{{ $item->image }}">
+                    <img class="news-image float-md-left"
+                         src="/public/img/news/{{ $item->image }}"
+                         title="{{ $item->l10nRelevant()->title }}"
+                         alt="{{ $item->l10nRelevant()->title }}">
+                </a>
+            </div>
         @endif
         <div class="news-content">
             {!! $item->l10nRelevant()->message !!}

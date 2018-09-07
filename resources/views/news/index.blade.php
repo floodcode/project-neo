@@ -32,12 +32,14 @@
 
                     <div class="card-text clearfix">
                         @if ($item->image)
-                            <a href="{{ route('news.view', ['id' => $item->id]) }}">
-                                <img class="news-image float-left"
-                                     src="/public/img/news/{{ $item->image }}"
-                                     title="{{ $item->l10nRelevant()->title }}"
-                                     alt="{{ $item->l10nRelevant()->title }}">
-                            </a>
+                            <div class="text-center">
+                                <a href="{{ route('news.view', ['id' => $item->id]) }}">
+                                    <img class="news-image float-md-left"
+                                         src="/public/img/news/{{ $item->image }}"
+                                         title="{{ $item->l10nRelevant()->title }}"
+                                         alt="{{ $item->l10nRelevant()->title }}">
+                                </a>
+                            </div>
                         @endif
                         <div class="news-content">
                             {!! Str::words($item->l10nRelevant()->message, 150, '') !!}
