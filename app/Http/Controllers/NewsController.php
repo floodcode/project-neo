@@ -77,7 +77,7 @@ class NewsController extends MainController
         }
 
         $request->flash();
-        $data = $this->validate($request, $this->newsRules(), $this->newsMessages());
+        $data = $this->validate($request, $this->newsCreateRules(), $this->newsMessages());
         $data['user-id'] = Auth::user()->id;
 
         $item = new News();
@@ -103,7 +103,7 @@ class NewsController extends MainController
         }
 
         $request->flash();
-        $data = $this->validate($request, $this->newsRules(), $this->newsMessages());
+        $data = $this->validate($request, $this->newsEditRules(), $this->newsMessages());
         $this->prefillNewsPost($item, $data);
         $item->save();
 
@@ -140,7 +140,17 @@ class NewsController extends MainController
         return $this->jsonSuccess();
     }
 
-    protected function newsRules(): array
+    protected function newsCreateRules(): array
+    {
+        return [
+            'title' => 'required|max:255',
+            'message' => 'required',
+            'image' => 'required|image|mimes:jpeg,png',
+            'category-id' => 'required'
+        ];
+    }
+
+    protected function newsEditRules(): array
     {
         return [
             'title' => 'required|max:255',

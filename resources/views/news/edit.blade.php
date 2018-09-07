@@ -20,7 +20,8 @@
     @include('news.components.editor', [
         'formAction' => route('news.edit', ['id' => $item->id]),
         'cancelRoute' => route('news.view', ['id' => $item->id]),
-        'submitButtonText' => $item->isTranslated() ? __('button.edit-post') : __('button.translate-post')
+        'submitButtonText' => $item->isTranslated() ? __('button.edit-post') : __('button.translate-post'),
+        'imageRequired' => false
     ])
 
 @endsection

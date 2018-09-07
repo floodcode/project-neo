@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="news-create-image">{{ __('label.post-image') }}</label>
         <div class="custom-file">
-            <input type="file" name="image" accept="image/png, image/jpeg" class="custom-file-input" id="news-create-image">
+            <input {{ $imageRequired ? 'required' : '' }} type="file" name="image" accept="image/png, image/jpeg" class="custom-file-input" id="news-create-image">
             <label id="news-create-image-label" class="custom-file-label" for="news-create-image">{{ __('label.choose-file') }}</label>
         </div>
     </div>

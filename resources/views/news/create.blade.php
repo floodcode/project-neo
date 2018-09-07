@@ -16,7 +16,8 @@
     @include('news.components.editor', [
         'formAction' => route('news.create'),
         'cancelRoute' => route('news'),
-        'submitButtonText' => __('button.add-post')
+        'submitButtonText' => __('button.add-post'),
+        'imageRequired' => true
     ])
 
 @endsection
