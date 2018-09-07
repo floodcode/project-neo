@@ -32,8 +32,8 @@
                                 class="btn btn-primary btn-sm edit-category"
                                 data-id="{{ $category->id }}"
                                 data-name="{{ $category->l10nRelevant()->name }}"
-                                data-slug="{{ $category->slug }}">Edit</button>
-                        <button type="button" data-id="{{ $category->id }}" class="btn btn-danger btn-sm delete-category">Delete</button>
+                                data-slug="{{ $category->slug }}">{{ __('button.edit') }}</button>
+                        <button type="button" data-id="{{ $category->id }}" class="btn btn-danger btn-sm delete-category">{{ __('button.delete') }}</button>
                     </td>
                 </tr>
             @endforeach
