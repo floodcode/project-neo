@@ -47,7 +47,7 @@
         {{ $item->l10nRelevant()->created_at->diffForHumans() }}
 
         @if (!$item->isTranslated())
-            <span class="badge badge-danger">{{ __('label.not-translated') }}</span>
+            <span class="badge badge-warning">{{ __('label.not-translated') }}</span>
         @endif
     </p>
 
