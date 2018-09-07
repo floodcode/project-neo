@@ -26,6 +26,7 @@ return [
     'send-password-reset-link' => 'Відправити посилання відновлення пароля',
 
     // News
+    'all-news' => 'Всі новини',
     'add-post' => 'Додати новину',
     'edit-post' => 'Редагувати пост',
     'translate-post' => 'Перекласти пост',
